@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+header .container-fluid{  
+   background-color: rgb(55, 103, 177);
+   width: 90%;
+   height: 60px;   
+}
+header .container-fluid a{
+   color: white;
+   font-size: 20px;
+}
