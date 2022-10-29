@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
+  public page : number= 1;
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+

@@ -8,3 +8,36 @@ header .container-fluid a{
    color: white;
    font-size: 20px;
 }
+#idTablePersona{
+   width: 100%;
+}
+table, th, td {
+   background-color: rgb(227, 232, 227);
+   text-align: center;
+   font-size: 15px;
+   font-family: Arial, Helvetica, sans-serif;
+   border-bottom: 1px solid rgb(154, 173, 205); 
+
+}
+tr:hover{
+   background-color: rgb(146, 168, 209);
+}
+th{   
+   color: rgb(12, 63, 216);
+}
+.active {
+ 
+   border-bottom: 1px solid rgb(154, 173, 205); 
+ }
+ .active:hover{
+   background-color: rgb(146, 168, 209);
+ }
+ footer {
+   background-color:rgb(55, 103, 177);
+   position: static;
+   bottom: 0;
+   width: 95%;
+   height: 70px;
+   color: white;
+   
+ }
