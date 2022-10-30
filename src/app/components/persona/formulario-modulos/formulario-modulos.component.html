@@ -1,0 +1,78 @@
+<app-header></app-header>
+<app-nabvar></app-nabvar>
+
+
+<div class="container" id="formModulos" >
+    <div class="row col-lg-8 border" >
+        <form>
+            <div class="row " >
+                <h2 style="text-align: center;">Asignación de módulos</h2>
+                <dir></dir>
+                <label for="text">Los campos con (<font color="red">*</font>) son obligatorios</label>
+                <dir></dir>
+                <div class="col-4">
+                    <label for="text" class="form-label">Persona(<font color="red">*</font>)</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Seleccionar..</option>
+                        <option value="1">Si</option>
+                        <option value="2">No</option>
+                      </select>
+                </div>
+                <div class="col-4">
+                    <label for="text" class="form-label">Seguros(<font color="red">*</font>)</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Seleccionar..</option>
+                        <option value="1">Si</option>
+                        <option value="2">No</option>
+                      </select>
+                </div>
+                <div class="col-4">
+                    <label for="text" class="form-label">Impresoras(<font color="red">*</font>)</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Seleccionar..</option>
+                        <option value="1">Si</option>
+                        <option value="2">No</option>
+                      </select>
+                </div>
+                <div class="col-4">
+                    <label for="text" class="form-label">Impresión 3D</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Seleccionar..</option>
+                        <option value="1">Si</option>
+                        <option value="2">No</option>
+                      </select>
+                </div>
+                <div class="col-4">
+                     <label class="form-label" for="email">Repuestos(<font color="red">*</font>)</label>
+                     <select class="form-select" aria-label="Default select example">
+                        <option selected>Seleccionar..</option>
+                        <option value="1">Si</option>
+                        <option value="2">No</option>
+                      </select>        
+                </div>
+                <div class="col-4">
+                    <label for="text" class="form-label">Revisión</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Seleccionar..</option>
+                        <option value="1">Si</option>
+                        <option value="2">No</option>
+                      </select>
+                </div>
+                <div class="col-4">
+                    <label for="text" class="form-label">Finalizadas (<font color="red">*</font>)</label>
+                    <select class="form-select " aria-label="Default select example">
+                        <option selected>Seleccionar..</option>
+                        <option value="1">Si</option>
+                        <option value="2">No</option>
+                      </select>
+                </div>               
+
+            </div>
+        </form>
+        <div>
+            <button type="submit" class="btn btn-primary" style="margin: 5px ;">Agregar</button>
+            <button type="button" routerLink="/modulos" class="btn btn-danger">Cancelar</button>
+        </div>
+
+    </div>
+</div>

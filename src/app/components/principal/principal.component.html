@@ -1,209 +1,122 @@
 <!--instanciamos la cabecera-->
 <app-header></app-header>
 
+
 <dir>
-  <div class="container">
-    <table datatable class="row-border hover " id="idTablePersona">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">Placa</th>
-          <th scope="col">Año modelo</th>
-          <th scope="col">Velocidad impresión</th>
-          <th scope="col">Volumen impresión</th>
-          <th scope="col">País</th>
-          <th scope="col">F. mantenimiento</th>
-          <th scope="col">Detalles</th>
-          <th scope="col">Acción</th>
-        </tr>
-      </thead>
-      <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
-        <tr>
-          <th scope="row">1</th>
-          <td>Impresora</td>
-          <td>g-54826</td>
-          <td>1985</td>
-          <td>150455/s</td>
-          <td>10000</td>
-          <td>colombia</td>
-          <td>02/10/2022</td>
-          <td>no aplica</td>
-          <td>
-            <a class="btn btn-success btn-sm" routerLink="">Editar</a>
-            <a class="btn btn-danger btn-sm" routerLink="">Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Impresoras</td>
-          <td>g-54826</td>
-          <td>1985</td>
-          <td>150455/s</td>
-          <td>10000</td>
-          <td>colombia</td>
-          <td>02/10/2022</td>
-          <td>no aplica</td>
-          <td>
-            <a class="btn btn-success btn-sm" routerLink="">Editar</a>
-            <a class="btn btn-danger btn-sm" routerLink="">Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Impresora</td>
-          <td>g-54826</td>
-          <td>1985</td>
-          <td>150455/s</td>
-          <td>10000</td>
-          <td>colombia</td>
-          <td>02/10/2022</td>
-          <td>no aplica</td>
-          <td>
-            <a class="btn btn-success btn-sm" routerLink="">Editar</a>
-            <a class="btn btn-danger btn-sm" routerLink="">Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>Impresora</td>
-          <td>g-54826</td>
-          <td>1985</td>
-          <td>150455/s</td>
-          <td>10000</td>
-          <td>colombia</td>
-          <td>02/10/2022</td>
-          <td>no aplica</td>
-          <td>
-            <a class="btn btn-success btn-sm" routerLink="">Editar</a>
-            <a class="btn btn-danger btn-sm" routerLink="">Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>Impresora</td>
-          <td>g-54826</td>
-          <td>1985</td>
-          <td>150455/s</td>
-          <td>10000</td>
-          <td>colombia</td>
-          <td>02/10/2022</td>
-          <td>no aplica</td>
-          <td>
-            <a class="btn btn-success btn-sm" routerLink="">Editar</a>
-            <a class="btn btn-danger btn-sm" routerLink="">Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">6</th>
-          <td>Impresora</td>
-          <td>g-54826</td>
-          <td>1985</td>
-          <td>150455/s</td>
-          <td>10000</td>
-          <td>colombia</td>
-          <td>02/10/2022</td>
-          <td>no aplica</td>
-          <td>
-            <a class="btn btn-success btn-sm" routerLink="">Editar</a>
-            <a class="btn btn-danger btn-sm" routerLink="">Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Impresora</td>
-          <td>g-54826</td>
-          <td>1985</td>
-          <td>150455/s</td>
-          <td>10000</td>
-          <td>colombia</td>
-          <td>02/10/2022</td>
-          <td>no aplica</td>
-          <td>
-            <a class="btn btn-success btn-sm" routerLink="">Editar</a>
-            <a class="btn btn-danger btn-sm" routerLink="">Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Impresoras</td>
-          <td>g-54826</td>
-          <td>1985</td>
-          <td>150455/s</td>
-          <td>10000</td>
-          <td>colombia</td>
-          <td>02/10/2022</td>
-          <td>no aplica</td>
-          <td>
-            <a class="btn btn-success btn-sm" routerLink="">Editar</a>
-            <a class="btn btn-danger btn-sm" routerLink="">Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Impresora</td>
-          <td>g-54826</td>
-          <td>1985</td>
-          <td>150455/s</td>
-          <td>10000</td>
-          <td>colombia</td>
-          <td>02/10/2022</td>
-          <td>no aplica</td>
-          <td>
-            <a class="btn btn-success btn-sm" routerLink="">Editar</a>
-            <a class="btn btn-danger btn-sm" routerLink="">Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>Impresora</td>
-          <td>g-54826</td>
-          <td>1985</td>
-          <td>150455/s</td>
-          <td>10000</td>
-          <td>colombia</td>
-          <td>02/10/2022</td>
-          <td>no aplica</td>
-          <td>
-            <a class="btn btn-success btn-sm" routerLink="">Editar</a>
-            <a class="btn btn-danger btn-sm" routerLink="">Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>Impresora</td>
-          <td>g-54826</td>
-          <td>1985</td>
-          <td>150455/s</td>
-          <td>10000</td>
-          <td>colombia</td>
-          <td>02/10/2022</td>
-          <td>no aplica</td>
-          <td>
-            <a class="btn btn-success btn-sm" routerLink="">Editar</a>
-            <a class="btn btn-danger btn-sm" routerLink="">Eliminar</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">6</th>
-          <td>Impresora</td>
-          <td>g-54826</td>
-          <td>1985</td>
-          <td>150455/s</td>
-          <td>10000</td>
-          <td>colombia</td>
-          <td>02/10/2022</td>
-          <td>no aplica</td>
-          <td>
-            <a class="btn btn-success btn-sm" routerLink="">Editar</a>
-            <a class="btn btn-danger btn-sm" routerLink="">Eliminar</a>
-          </td>
-        </tr>
+  <main class="mt-5">
+    <div class="container">
+      <!--Section: Content-->
+      <section>
+        <div class="row">
+          <div class="col-md-6 gx-5 mb-4">
+            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+              <img src="https://www.ricoh-colombia.com/wp-content/uploads/2020/10/MP-6054.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+          </div>
 
-      </tbody>
-    </table>
+          <div class="col-md-6 gx-5 mb-4">
+            <h4><strong>Características estándar</strong></h4>
+            <p class="text-muted">
+              Selección automática de papel, cambio automático de bandeja, fotocopiado de cuadernillo/revista,
+              eliminación de centros/bordes, capítulos, modo de combinación, inserción de portada, servidor de
+              documentos (capacidad para 3,000 archivos), doble faz, clasificación electrónica/rotación, panel de
+              control con pantalla táctil VGA a todo color, fotocopiado de tarjetas de identificación, 8
+              preconfiguraciones de trabajo, 25 programas de trabajo, negativo/positivo, hoja intercalada para
+              proyector, fotocopia de muestra, fotocopiado en serie, pantalla simple, 1,000 códigos de usuario, sellos
+              de usuariois.
+            </p>
+            <p><strong>Interfaces</strong></p>
+            <p class="text-muted">
+              Estándar: 1 Gigabit Ethernet (1000Base-T/100Base-TX/10Base-T)
+              USB 2.0 tipo A (2 puertos en la parte posterior del equipo, 1 puerto en el panel de operación), Ranura
+              para tarjeta SD en el panel de operación, USB 2.0 tipo B
+              Opcional: LAN inalámbrica IEEE 802.11a/b/g/n, Servidor para dispositivo USB (segundo NIC) e IEEE 1284
+              Paralelo
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="row">
+          <div class="col-md-6 gx-5 mb-4">
+            <h4><strong>Descripción</strong></h4>
+            <p class="text-muted">
+              Velocidad de impresión 33 ppm (A4) / 35 ppm (Carta)
+              Resolución (impresión, fotocopia, escáner) Impresión: 1200 x 1200 ppp; Fotocopia: 600 x 600 ppp; Escáner:
+              plano 1200 × 1200 ppp
+              Tiempo de primera impresión Menos de 8,2 segundos
+              Volumen mensual máx. 60.000 páginas
+              Volumen mensual recomendado De 750 a 3.500 páginas
 
-  </div>
+              Velocidad de copia 33 ppm (A4) / 35 ppm (Carta)
+              Velocidad de la primera copia Escáner plano: Menos de 10 s; ADF: Menos de 11 s
+              Zoom 25% - 400%
+              Número de copias máx. 1 - 99 páginas
+              Función adicional Copia de Documentos de identidad, Recibos, N-up (de varias páginas en una hoja), copia
+              Clonada, copia de Póster, copia Manual dúplex, copia Cotej
+
+              Velocidad de escaneo 24 ppm (A4) / 25 ppm (Carta)
+              Tamaño de escaneo máx. Escáner plano: 216 x 297 mm / ADF: 216 x 356 mm
+              Función de salida Escanear a correo electrónico, PC, FTP, memoria externa
+              Escaneado en color Sí
+              Capacidad del ADF 50 páginas
 
 
-  
+              Estilo de cartucho Tambor y tóner separados
+              Capacidad del cartucho inicial / Vida útil de la unidad de tambor (2) (Imprimir página por página con
+              papel A4 discontinuamente) TL-410 (1.500 páginas) / DL-410 (12.000 páginas)
+              Capacidad del cartucho y el tambor (2) Cartucho: TL-410 (1.500 páginas, estándar); TL-410H (3.000 páginas,
+              alta); TL-410X (6000 páginas, extra alta) Tambor: DL-410 (12.000 páginas)
+            </p>
+          </div>
+
+          <div class="col-md-6 gx-5 mb-4">
+            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+              <img src="https://http2.mlstatic.com/D_NQ_NP_982125-MCO31562080880_072019-V.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="bg-light text-lg-start">
+
+
+    <hr class="m-0" />
+
+    <div class="text-center py-4 align-items-center">
+      <p>Follow MDB on social media</p>
+      <a href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" class="btn btn-primary m-1" role="button"
+        rel="nofollow" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.facebook.com/mdbootstrap" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com/MDBootstrap" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://github.com/mdbootstrap/mdb-ui-kit" class="btn btn-primary m-1" role="button" rel="nofollow"
+        target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-dark" href="https://mdbootstrap.com/">U-Caldas</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->

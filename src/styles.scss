@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+//header
 header .container-fluid{  
    background-color: rgb(55, 103, 177);
    width: 90%;
@@ -8,36 +9,116 @@ header .container-fluid a{
    color: white;
    font-size: 20px;
 }
+//tablas
 #idTablePersona{
    width: 100%;
 }
 table, th, td {
    background-color: rgb(227, 232, 227);
-   text-align: center;
    font-size: 15px;
    font-family: Arial, Helvetica, sans-serif;
    border-bottom: 1px solid rgb(154, 173, 205); 
 
+}
+th, td {
+   width: auto;
+   text-align: left;
+ 
 }
 tr:hover{
    background-color: rgb(146, 168, 209);
 }
 th{   
    color: rgb(12, 63, 216);
+   text-align: right;
+
 }
-.active {
- 
+.active { 
    border-bottom: 1px solid rgb(154, 173, 205); 
  }
  .active:hover{
    background-color: rgb(146, 168, 209);
  }
+
+ //footer
  footer {
    background-color:rgb(55, 103, 177);
    position: static;
    bottom: 0;
-   width: 95%;
+   width: 100%;
    height: 70px;
    color: white;
    
  }
+
+ //tabla estudio y rol
+ #container1{
+   padding: 30px;
+   width: 40%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-100%, -20%);
+  
+ }
+ #container2{
+   padding: 30px;
+   width: 40%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-0%, -20%);
+ }
+  //formulario estudio
+  #fromestudio{
+   padding: 30px;
+   width: 40%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-70%, -20%);
+  
+ }
+ #formestudio2{
+   padding: 30px;
+   width: 40%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-0%, -20%);
+  
+ }
+ 
+ //formulario funcionario
+ #formfuncionario{  
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-32%, -20%);
+ 
+ }
+ //tabla funcionario
+ #containerPersona{
+   padding: 30px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -20%);
+ }
+
+ //tabla modulo
+ #containerModulos{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -20%);
+  
+ }
+ //formulario modulo
+ #formModulos{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-32%, -20%);
+ }
+

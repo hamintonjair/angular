@@ -1,0 +1,103 @@
+<!--instanciamos la cabecera-->
+<app-header></app-header>
+<app-nabvar></app-nabvar>
+
+<dir>
+
+  <div class="row" style="margin:10px; ">
+    <div class="col-md-4">
+      <h3 style="text-align: right;">Módulo Permisos</h3>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-outline-primary" routerLink="/formModulos" style="text-align: left;">Agregar</button>
+    </div>
+  </div>
+<dir>
+  <div class="container" id="containerModulos">
+    <table datatable class="row-border hover " id="idTablePersona">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Funcionario</th>
+          <th scope="col">Rol</th>
+          <th scope="col">Persona</th>
+          <th scope="col">Impresora</th>
+          <th scope="col">Seguro</th>
+          <th scope="col">Impresión 3D</th>
+          <th scope="col">Revisión</th>
+          <th scope="col">Repuestos</th> 
+          <th scope="col">Acción</th> 
+        </tr>
+      </thead>
+      <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
+        <tr>
+          <th scope="row">1</th>
+          <td>Haminton Mena</td>
+          <td>Administrador</td>
+          <td>si</td>
+          <td>si</td>
+          <td>si</td>
+          <td>si</td>
+          <td>si</td>  
+          <td>si</td>    
+          
+          <td>
+           <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+          </td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>alex</td>
+            <td>Auxiliar</td>
+            <td>no</td>
+            <td>si</td>
+            <td>no</td>
+            <td>si</td>
+            <td>si</td>  
+            <td>no</td>    
+                    
+            <td>
+              <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Hector</td>
+            <td>Tecnico</td>
+            <td>no</td>
+            <td>si</td>
+            <td>no</td>
+            <td>si</td>
+            <td>si</td>  
+            <td>no</td>    
+          
+            <td>
+             <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Esteban</td>
+            <td>auxiliar</td>
+            <td>no</td>
+            <td>si</td>
+            <td>no</td>
+            <td>si</td>
+            <td>si</td>  
+            <td>no</td>    
+             
+            <td>
+              <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+
+  

@@ -1,0 +1,103 @@
+<!--instanciamos la cabecera-->
+<app-header></app-header>
+<app-nabvar></app-nabvar>
+
+<dir>
+  <div class="row " style="margin:10px; " >
+    <div class="col-md-4">
+      <h3 style="text-align: right;">Módulo funcionarios</h3>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-outline-primary" routerLink="/formPersona" style="text-align: left;">Agregar</button>
+    </div>
+  </div>
+  <dir>
+
+  <div class="container" id="containerPersona">
+    <table datatable class="row-border hover " id="idTablePersona">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Cédula</th>
+          <th scope="col">Teléfono</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Dirección</th>
+          <th scope="col">F. nacimiento</th>
+          <th scope="col">Socio</th>
+          <th scope="col">Acción</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
+        <tr>
+          <th scope="row">1</th>
+          <td>Haminton</td>
+          <td>Mena</td>
+          <td>80772379</td>
+          <td>3124943527/s</td>
+          <td>hamintonjair@gmail.com</td>
+          <td>cra 12 # 45-135</td>
+          <td>02/10/2022</td>
+          <td>no</td>
+          <td>
+            <a class="btn btn-info btn-sm" routerLink=""><i class="fa-solid fa-eye"></i></a>
+            <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Haminton</td>
+          <td>Mena</td>
+          <td>80772379</td>
+          <td>3124943527/s</td>
+          <td>hamintonjair@gmail.com</td>
+          <td>cra 12 # 45-135</td>
+          <td>02/10/2022</td>
+          <td>no</td>
+          <td>
+            <a class="btn btn-info btn-sm" routerLink=""><i class="fa-solid fa-eye"></i></a>
+            <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+          </td>
+        </tr>
+        <tr>
+
+          <th scope="row">3</th>
+          <td>Haminton</td>
+          <td>Mena</td>
+          <td>80772379</td>
+          <td>3124943527/s</td>
+          <td>hamintonjair@gmail.com</td>
+          <td>cra 12 # 45-135</td>
+          <td>02/10/2022</td>
+          <td>no</td>
+          <td>
+            <a class="btn btn-info btn-sm" routerLink=""><i class="fa-solid fa-eye"></i></a>
+            <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Haminton</td>
+          <td>Mena</td>
+          <td>80772379</td>
+          <td>3124943527/s</td>
+          <td>hamintonjair@gmail.com</td>
+          <td>cra 12 # 45-135</td>
+          <td>02/10/2022</td>
+          <td>no</td>
+          <td>
+            <a class="btn btn-info btn-sm" routerLink=""><i class="fa-solid fa-eye"></i></a>
+            <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  
