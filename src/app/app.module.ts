@@ -23,6 +23,8 @@ import { Impresion3dComponent } from './components/impresion3d/impresion3d.compo
 import { RevisionesComponent } from './components/revisiones/revisiones.component';
 import { RevisionesFinalizadasComponent } from './components/revisiones-finalizadas/revisiones-finalizadas.component';
 import { AgregarImpresion3dComponent } from './components/impresion3d/agregar-impresion3d/agregar-impresion3d.component';
+import { NabvarGeneralComponent } from './components/nabvar-general/nabvar-general.component';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { AgregarImpresion3dComponent } from './components/impresion3d/agregar-im
     RevisionesComponent,
     RevisionesFinalizadasComponent,
     AgregarImpresion3dComponent,
+    NabvarGeneralComponent,
+
 
   ],
   imports: [
