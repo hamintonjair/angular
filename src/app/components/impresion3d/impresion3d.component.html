@@ -1,0 +1,76 @@
+<!--instanciamos la cabecera-->
+<app-header></app-header>
+<app-nabvar></app-nabvar>
+
+<dir>
+    <div class="row " style="margin:10px; ">
+        <div class="col-md-4">
+            <h3 style="text-align: right;">Módulo Impresión 3D</h3>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-outline-primary" routerLink="/agregar-impresion3d"
+                style="text-align: left;">Agregar</button>
+        </div>
+    </div>
+<dir>
+
+
+
+        <div class="container mt-5" id="containerImpresion">
+            <div class="row">
+                <div class="col-lg-12 offset-lg2">
+                    <div class="card">
+                        <div class="card-body text-center">
+
+                            <table datatable class="table table-striped mt-5 " id="idTableImpresion">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nombres y Apellidos</th>
+                                        <th scope="col">Cédula</th>
+                                        <th scope="col">Tipo de Impresión</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Haminton Mena</td>
+                                        <td>80772379</td>
+                                        <td>3D</td>
+                                        <td>25</td>
+                                        <td>15000</td>
+                                        <td>
+                                            <a class="btn btn-info btn-sm" routerLink=""><i
+                                                    class="fa-solid fa-eye"></i></a>
+                                            <a class="btn btn-success btn-sm" routerLink=""><i
+                                                    class="fa-solid fa-pen-to-square"></i></a>
+                                            <a class="btn btn-danger btn-sm" routerLink=""><i
+                                                    class="fa-solid fa-trash-can"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Mario Lopez</td>
+                                        <td>562545</td>
+                                        <td>2D/s</td>
+                                        <td>60</td>
+                                        <td>25000</td>
+                                        <td>
+                                            <a class="btn btn-info btn-sm" routerLink=""><i
+                                                    class="fa-solid fa-eye"></i></a>
+                                            <a class="btn btn-success btn-sm" routerLink=""><i
+                                                    class="fa-solid fa-pen-to-square"></i></a>
+                                            <a class="btn btn-danger btn-sm" routerLink=""><i
+                                                    class="fa-solid fa-trash-can"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

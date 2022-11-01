@@ -19,6 +19,10 @@ import { FormularioEstudiosRolComponent } from './components/persona/formulario-
 import { FormularioModulosComponent } from './components/persona/formulario-modulos/formulario-modulos.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Impresion3dComponent } from './components/impresion3d/impresion3d.component';
+import { RevisionesComponent } from './components/revisiones/revisiones.component';
+import { RevisionesFinalizadasComponent } from './components/revisiones-finalizadas/revisiones-finalizadas.component';
+import { AgregarImpresion3dComponent } from './components/impresion3d/agregar-impresion3d/agregar-impresion3d.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,10 @@ import { HttpClientModule } from '@angular/common/http';
     FormularioPersonaComponent,
     FormularioEstudiosRolComponent,
     FormularioModulosComponent,
+    Impresion3dComponent,
+    RevisionesComponent,
+    RevisionesFinalizadasComponent,
+    AgregarImpresion3dComponent,
 
   ],
   imports: [

@@ -51,16 +51,6 @@ th{
    
  }
 
- //tabla estudio y rol
- #container1{
-   padding: 30px;
-   width: 40%;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-100%, -20%);
-  
- }
  #container2{
    padding: 30px;
    width: 40%;
@@ -71,42 +61,23 @@ th{
  }
   //formulario estudio
   #fromestudio{
-   padding: 30px;
-   width: 40%;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-70%, -20%);
+   padding: 20px;
   
  }
- #formestudio2{
-   padding: 30px;
-   width: 40%;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-0%, -20%);
-  
- }
+
  
  //formulario funcionario
  #formfuncionario{     
     padding: 20px;
  }
 
- //tabla modulo
- #containerModulos{
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -20%);
-  
- }
  //formulario modulo
  #formModulos{
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-32%, -20%);
+   padding: 20px;
+ }
+
+  //formulario impresion3d
+  #formImpresion3d{
+   padding: 20px;
  }
 
