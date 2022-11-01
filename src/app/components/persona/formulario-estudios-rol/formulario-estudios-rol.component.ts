@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-formulario-estudios-rol',
   templateUrl: './formulario-estudios-rol.component.html',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioEstudiosRolComponent implements OnInit {
 
-  constructor() { }
+    
+
+  constructor() {
+   
+   }
 
   ngOnInit(): void {
+
+
   }
+
 
 }

@@ -1,68 +1,79 @@
 <app-header></app-header>
 <app-nabvar></app-nabvar>
 
-<div class="container" id="formfuncionario" >
-    <div class="row col-lg-8 border" >
-        <form>
-            <div class="row " >
-                <h2 style="text-align: center;">Registro de funcionarios</h2>
-                <dir></dir>
-                <label for="text">Los campos con (<font color="red">*</font>) son obligatorios</label>
-                <dir></dir>
-                <div class="col-4">
-                    <label for="text" class="form-label">Estudio(<font color="red">*</font>)</label>
-                    <input type="nombre" class="form-control" id="nombre" placeholder="Nombre" required="">
-                </div>                
-                <div class="col-4">
-                     <label class="form-label" for="email">E-mail (<font color="red">*</font>)</label>
-                    <input type="email" class="form-control" id="email"  placeholder="E-mail"  required="">                   
+<div class="container" id="formfuncionario">
+    <div class="row justify-content-center">
+        <div class="row col-lg-8 border">
+            <form>
+                <div class="row ">
+                    <h2 style="text-align: center;">Registro de funcionarios</h2>
+                    <dir></dir>
+                    <label for="text">Los campos con (<font color="red">*</font>) son obligatorios</label>
+                    <dir></dir>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Nombre(<font color="red">*</font>)</label>
+                        <input type="text" class="form-control" [(ngModel)]="persona.Nombres" name="nombre.Nombres"
+                            placeholder="Nombre" required="">
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Apellidos(<font color="red">*</font>)</label>
+                        <input type="text" class="form-control" [(ngModel)]="persona.Apellidos"
+                            name="apellidos.Apellidos" placeholder="Apellidos" required="">
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Cédula(<font color="red">*</font>)</label>
+                        <input type="number" class="form-control" [(ngModel)]="persona.Identificacion"
+                            name="cedula.Identificacion" placeholder="Cédula" required="">
+                    </div>
+                    <div class="col-4">
+                        <label class="form-label" for="email">E-mail (<font color="red">*</font>)</label>
+                        <input type="email" class="form-control" [(ngModel)]="persona.Email" name="email.Email"
+                            placeholder="E-mail" required="">
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" [(ngModel)]="persona.Direccion"
+                            name="direccion.Direccion" placeholder="Dirección">
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Fecha nacimiento</label>
+                        <input type="date" class="form-control" [(ngModel)]="persona.FechaNacimiento"
+                            name="fecha.FechaNacimiento">
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Profesión (<font color="red">*</font>)</label>
+                        <select class="form-select" [(ngModel)]="persona.nivelEstudios" name="email.nivelEstudios"
+                            name="profesion" aria-label="Default select example">
+                            <option selected>Seleccionar..</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Socio</label>
+                        <select class="form-select " [(ngModel)]="persona.Socio" name="socio.Socio"
+                            aria-label="Default select example">
+                            <option selected>Seleccionar..</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Password (<font color="red">*</font>)</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+
                 </div>
-                <div class="col-4">
-                    <label for="text" class="form-label">Dirección</label>
-                    <input type="text" class="form-control" id="direccion" placeholder="Dirección">
-                </div>
-                <div class="col-4">
-                    <label for="text" class="form-label">Fecha nacimiento</label>
-                    <input type="date" class="form-control" id="fecha">
-                </div>
-                <div class="col-4">
-                    <label for="text" class="form-label">Profesión (<font color="red">*</font>)</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Seleccionar..</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                </div>
-                <div class="col-4">
-                    <label for="text" class="form-label">Socio</label>
-                    <select class="form-select " aria-label="Default select example">
-                        <option selected>Seleccionar..</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                </div>
-                <div class="col-4">
-                    <label for="text" class="form-label">Rol (<font color="red">*</font>)</label>
-                    <select class="form-select " aria-label="Default select example">
-                        <option selected>Seleccionar..</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                </div>
-                <div class="col-4">
-                    <label for="text" class="form-label">Password (<font color="red">*</font>)</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                <div>
+                    <button type="button" class="btn btn-primary" onclick="RegisterPersona()"
+                        style="margin: 5px ;">Agregar</button>
+                    <button type="button" routerLink="/persona" class="btn btn-danger">Cancelar</button>
                 </div>
 
-            </div>
-        </form>
-        <div>
-            <button type="submit" class="btn btn-primary" style="margin: 5px ;">Agregar</button>
-            <button type="button" routerLink="/persona" class="btn btn-danger">Cancelar</button>
+            </form>
+
         </div>
-
     </div>
 </div>

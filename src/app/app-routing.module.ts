@@ -15,9 +15,9 @@ const routes: Routes = [
   { path : 'login', component: LoginComponent },
   { path : 'principal', component: PrincipalComponent },
   { path : 'persona', component:PersonaComponent },
-  { path : 'estudio', component: EstudiosRolComponent },
-  { path : 'modulos', component: ModulosComponent },
   { path : 'formPersona', component: FormularioPersonaComponent },
+  { path : 'persona-estudio', component: EstudiosRolComponent },
+  { path : 'persona-modulos', component: ModulosComponent },
   { path : 'formEstudioRol', component: FormularioEstudiosRolComponent },
   { path : 'formModulos', component: FormularioModulosComponent },
   

@@ -25,8 +25,8 @@ th, td {
    text-align: left;
  
 }
-tr:hover{
-   background-color: rgb(146, 168, 209);
+tr:hover, th:hover{
+   background-color: rgb(108, 133, 180);
 }
 th{   
    color: rgb(12, 63, 216);
@@ -90,20 +90,8 @@ th{
  }
  
  //formulario funcionario
- #formfuncionario{  
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-32%, -20%);
- 
- }
- //tabla funcionario
- #containerPersona{
-   padding: 30px;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -20%);
+ #formfuncionario{     
+    padding: 20px;
  }
 
  //tabla modulo
