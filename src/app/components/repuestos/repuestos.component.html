@@ -1,0 +1,103 @@
+<app-header></app-header>
+<!--<app-nabvar><app-nabvar>-->
+    <div class="p-5 text-center bg-image" style="
+    background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
+    height: 200px;
+    margin-top: 50px;
+  ">
+<div class="d-flex justify-content-center align-items-center h-100">
+    <div id="titulo"  style="margin:70px; " >
+        <div class="col-md-12">
+            <h3 style="text-align: center;" style="background-color: rgb(12, 63, 216)" >Repuestos de la Impresora</h3>
+        </div>
+    </div>
+</div>
+
+<!--<div class="row " style="margin:10px; ">
+    <div class="col-md-12">
+    <h3 style="text-align: center;">Módulo Repuestos</h3>
+</div>
+<div class="col-md-12">-->
+    <br><br><br><br>
+    <div class="row " style="margin:10px; ">
+        <div class="col-md-6">
+            <h3 style="text-align: right;">Módulo Repuestos</h3>
+        </div>
+        <div class="col-md-2">
+        <button type="button" class="btn btn-outline-primary" routerLink="/formRepuestos"
+            style="text-align: left;">Agregar</button>
+        </div>
+    </div>
+
+
+
+
+<!--<br>
+    <button type="button" class="btn btn-outline-primary" routerLink="/formRepuestos" style="text-align: left;">Agregar</button>
+</div>-->
+
+
+<div class="container" id="containerRepuesto">
+
+    <table datatable class="row-border hover " id="idTableRepuesto" >
+      <thead >
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Tipo de Repuesto</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Acción</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
+        <tr>
+          <th scope="row">1</th>
+          <td>Cabezal</td>
+          <td>50</td>
+          <td>50000</td>
+          <td>
+            <a class="btn btn-info btn-sm" routerLink=""><i class="fa-solid fa-eye"></i></a>
+            <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Estructura</td>
+          <td>34</td>
+          <td>25000</td>
+          <td>
+            <a class="btn btn-info btn-sm" routerLink=""><i class="fa-solid fa-eye"></i></a>
+            <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+          </td>
+        </tr>
+        <tr>
+
+          <th scope="row">3</th>
+          <td>Extrusor</td>
+          <td>34</td>
+          <td>40000</td>
+          <td>
+            <a class="btn btn-info btn-sm" routerLink=""><i class="fa-solid fa-eye"></i></a>
+            <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Fuente de alimentación</td>
+          <td>23</td>
+          <td>100000</td>
+          <td>
+            <a class="btn btn-info btn-sm" routerLink=""><i class="fa-solid fa-eye"></i></a>
+            <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  

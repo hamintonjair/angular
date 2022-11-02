@@ -24,6 +24,8 @@ import { RevisionesComponent } from './components/revisiones/revisiones.componen
 import { RevisionesFinalizadasComponent } from './components/revisiones-finalizadas/revisiones-finalizadas.component';
 import { AgregarImpresion3dComponent } from './components/impresion3d/agregar-impresion3d/agregar-impresion3d.component';
 import { NabvarGeneralComponent } from './components/nabvar-general/nabvar-general.component';
+import { RepuestosComponent } from './components/repuestos/repuestos.component';
+import { FormularioRepuestosComponent } from './components/repuestos/formulario-repuestos/formulario-repuestos.component';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { NabvarGeneralComponent } from './components/nabvar-general/nabvar-gener
     RevisionesFinalizadasComponent,
     AgregarImpresion3dComponent,
     NabvarGeneralComponent,
+    RepuestosComponent,
+    FormularioRepuestosComponent,
 
 
   ],

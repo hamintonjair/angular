@@ -12,9 +12,13 @@ import { FormularioEstudiosRolComponent } from './components/persona/formulario-
 import { FormularioModulosComponent } from './components/persona/formulario-modulos/formulario-modulos.component';
 import { Impresion3dComponent } from './components/impresion3d/impresion3d.component';
 import { AgregarImpresion3dComponent } from './components/impresion3d/agregar-impresion3d/agregar-impresion3d.component';
+import { RepuestosComponent } from './components/repuestos/repuestos.component';
+import { FormularioRepuestosComponent } from './components/repuestos/formulario-repuestos/formulario-repuestos.component';
+import { HeaderComponent } from './components/header/header.component';
 const routes: Routes = [
   
   { path : 'login', component: LoginComponent },
+  { path : 'header', component: HeaderComponent },
   { path : 'principal', component: PrincipalComponent },
   { path : 'persona', component:PersonaComponent },
   { path : 'agregar-persona', component: FormularioPersonaComponent },
@@ -24,7 +28,8 @@ const routes: Routes = [
   { path : 'agregar-modulo', component: FormularioModulosComponent },
   { path : 'impresion3d', component: Impresion3dComponent},
   { path : 'agregar-impresion3d', component: AgregarImpresion3dComponent},
-  
+  { path : 'repuestos', component: RepuestosComponent},
+  { path : 'formRepuestos', component:FormularioRepuestosComponent},
   { path : '', component: LoginComponent },
   { path :  "**",component: PageNotFoundComponent }
 ];
