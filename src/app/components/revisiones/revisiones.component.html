@@ -1,1 +1,112 @@
-<p>revisiones works!</p>
+<!--instanciamos la cabecera-->
+<app-header></app-header>
+<app-nabvar-general></app-nabvar-general>
+
+<dir>
+  <div class="row " style="margin:10px; ">
+    <div class="col-md-4">
+      <h3 style="text-align: right;">Módulo Revisiones</h3>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-outline-primary" routerLink="/agregar-revision"
+        style="text-align: left;">Agregar</button>
+    </div>
+  </div>
+<dir>
+
+    <div class="container mt-5" id="containerRevision">
+      <div class="row">
+        <div class="col-lg-12 offset-lg2">
+          <div class="card">
+            <div class="card-body text-center">           
+              
+              <table datatable class="table table-striped mt-5 ">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th>Tecnico</th>
+                    <th>T. revisión</th>
+                    <th>Impresora</th>  
+                    <th>Repuesto</th>                     
+                    <th>Precio</th>
+                    <th>Update</th>
+                    <th>Fecha</th>
+                    <th>Detalles</th>
+                    <th>Estado</th>
+                    <th scope="col">Acción</th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Haminton</td>   
+                    <td>interno</td>              
+                    <td>ricoh</td>
+                    <td>toner</td>
+                    <td>150000</td>
+                    <td>no</td> 
+                    <td>15/06/2022</td>
+                    <td>cambio de toner y mantenimiento</td>                 
+                    <td class="text-info ">En proceso</td>
+                    <td>                     
+                      <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Haminton</td>   
+                    <td>externo</td>              
+                    <td>ricoh</td>
+                    <td>toner</td>
+                    <td>150000</td>
+                    <td>si</td> 
+                    <td>15/06/2022</td>
+                    <td>cambio de toner y mantenimiento</td>                 
+                    <td class="text-success ">Terminado</td>
+                    <td>                     
+                      <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Haminton</td>   
+                    <td>interno</td>              
+                    <td>ricoh</td>
+                    <td>toner</td>
+                    <td>150000</td>
+                    <td>no</td> 
+                    <td>15/06/2022</td>
+                    <td>cambio de toner y mantenimiento</td>                 
+                    <td class="text-info ">En proceso</td>
+                    <td>                     
+                      <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Haminton</td>   
+                    <td>externo</td>              
+                    <td>ricoh</td>
+                    <td>toner</td>
+                    <td>150000</td>
+                    <td>si</td> 
+                    <td>15/06/2022</td>
+                    <td>cambio de toner y mantenimiento</td>                 
+                    <td class="text-success ">Terminado</td>
+                    <td>                     
+                      <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>

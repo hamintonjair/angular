@@ -1,0 +1,96 @@
+<app-header></app-header>
+<app-nabvar-general></app-nabvar-general>
+
+<div class="container" id="formrevisiones">
+    <div class="row justify-content-center">
+        <div class="row col-lg-8 border">
+
+            <form method="post">
+                <div class="row ">
+                    <h2 style="text-align: center;">Registro de revisiones</h2>
+                    <dir></dir>
+                    <label for="text">Los campos con (<font color="red">*</font>) son obligatorios</label>
+                    <dir></dir>
+
+                    <div class=" col-4">
+                        <label>Asignar operario o técnico(<font color="red">*</font>)</label>
+                        <select type="text" class="form-control" name="tecnico" required="">
+                            <option value="" selected="selected">Seleccionar..</option>
+                            <option value="@p.id">nombre</option>
+                        </select>
+                    </div>
+                    <div class=" col-4">
+                        <label>Impresora (<font color="red">*</font>)</label>
+                        <select type="text" class="form-control" name="impresora" required="">
+                            <option value="" selected="selected">Seleccionar..</option>
+                            <option value="@p.id">nombre</option>
+                        </select>
+                    </div>
+                    <div class=" col-4">
+                        <label>Estado (<font color="red">*</font>)</label>
+                        <select type="text" class="form-control" name="estado" required="">
+                            <option value="" selected="selected">Seleccionar..</option>
+                            <option value="1">Proceso</option>
+                            <option value="2">Finalizado</option>
+                        </select>
+                    </div>
+
+                    <div class=" col-4">
+                        <label>Tipo de revisión (<font color="red">*</font>)</label>
+                        <select type="text" class="form-control" name="revision" required="">
+                            <option value="" selected="selected">Seleccionar..</option>
+                            <option value="1">Interno</option>
+                            <option value="2">Externo</option>
+                        </select>
+                    </div>
+                    <div class=" col-4">
+                        <label>Cambio de Repuesto(<font color="red">*</font>) </label>
+                        <select name="repuesto" type="text" class="form-control" required="">
+                            <option value="" selected="selected">Seleccionar..</option>
+                            <option value="" selected="selected">Seleccionar..</option>
+                            <option value="id">nombre</option>
+
+                        </select>
+                    </div>
+                    <div class=" col-4">
+                        <label>Precio (<font color="red">*</font>)</label>
+                        <input type="precio" name="precio" class="form-control" placeholder="Precio" required="">
+                    </div>
+
+
+                    <div class="col-4">
+                        <label>Correo electrónico </label>
+                        <select type="text" class="form-control" name="email" placeholder="Email de envio" required="">
+                            <option value="" selected="selected">Seleccionar..</option>
+                            <option value="id">email</option>
+                        </select>
+                    </div>
+                    <div class=" col-4">
+                        <label>Actualización del software(<font color="red">*</font>)</label>
+                        <select type="text" class="form-control" name="actualizacion" required="">
+                            <option value="" selected="selected">Seleccionar..</option>
+                            <option value="1">Si</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+
+                    <div class=" col-8">
+                        <label>Detalles de la revisión (<font color="red">*</font>)</label>
+                        <textarea type="text" name="detalle" class="form-control" placeholder="Detalles"
+                            required=""></textarea>
+                    </div>
+                    <div class=" col-4">
+                        <label>Fecha de Revisión(<font color="red">*</font>)</label>
+                        <input class="form-control" type="date" id="fecha" name="fecha" value="" min="10" max="10"
+                            placeholder="01-02-2017" required="">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-primary" style="margin: 5px ;">Agregar</button>
+                    <button type="button" routerLink="/revisiones" class="btn btn-danger">Cancelar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

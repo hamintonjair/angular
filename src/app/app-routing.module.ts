@@ -1,4 +1,5 @@
 
+
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PrincipalComponent } from './components/principal/principal.component';
@@ -13,7 +14,10 @@ import { FormularioModulosComponent } from './components/persona/formulario-modu
 import { Impresion3dComponent } from './components/impresion3d/impresion3d.component';
 import { AgregarImpresion3dComponent } from './components/impresion3d/agregar-impresion3d/agregar-impresion3d.component';
 import { RepuestosComponent } from './components/repuestos/repuestos.component';
-import { FormularioRepuestosComponent } from './components/repuestos/formulario-repuestos/formulario-repuestos.component';
+import { AgregarRepuestosComponent } from './components/repuestos/agregar-repuestos/agregar-repuestos.component';
+import { RevisionesComponent } from './components/revisiones/revisiones.component';
+import { AgregarRevisionComponent } from './components/revisiones/agregar-revision/agregar-revision.component';
+import { RevisionesFinalizadasComponent } from './components/revisiones-finalizadas/revisiones-finalizadas.component';
 import { HeaderComponent } from './components/header/header.component';
 const routes: Routes = [
   
@@ -29,9 +33,12 @@ const routes: Routes = [
   { path : 'impresion3d', component: Impresion3dComponent},
   { path : 'agregar-impresion3d', component: AgregarImpresion3dComponent},
   { path : 'repuestos', component: RepuestosComponent},
-  { path : 'formRepuestos', component:FormularioRepuestosComponent},
+  { path : 'agregar-repuestos', component: AgregarRepuestosComponent},
+  { path : 'revisiones', component: RevisionesComponent},
+  { path : 'agregar-revision', component: AgregarRevisionComponent},
+  { path : 'revisiones-finalizadas', component: RevisionesFinalizadasComponent},
   { path : '', component: LoginComponent },
-  { path :  "**",component: PageNotFoundComponent }
+  { path : "**",component: PageNotFoundComponent }
 ];
 
 @NgModule({
