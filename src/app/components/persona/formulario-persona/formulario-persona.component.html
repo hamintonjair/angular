@@ -4,71 +4,72 @@
 <div class="container" id="formfuncionario">
     <div class="row justify-content-center">
         <div class="row col-lg-8 border">
-            <form>
+          
+            <form [formGroup]="personaForm" (ngSubmit)="agregarPersona()">
                 <div class="row ">
-                    <h2 style="text-align: center;">Registro de funcionarios</h2>
+                    <h2 style="text-align: center; color:rgb(0, 0, 0)" class="titulo">{{titulo | uppercase}}</h2>                 
                     <dir></dir>
                     <label for="text">Los campos con (<font color="red">*</font>) son obligatorios</label>
                     <dir></dir>
                     <div class="col-4">
                         <label for="text" class="form-label">Nombre(<font color="red">*</font>)</label>
-                        <input type="text" class="form-control" [(ngModel)]="persona.Nombres" name="nombre.Nombres"
-                            placeholder="Nombre" required="">
+                        <input type="text" class="form-control" formControlName="Nombres" name="Nombres"
+                            placeholder="Nombre" >
                     </div>
                     <div class="col-4">
                         <label for="text" class="form-label">Apellidos(<font color="red">*</font>)</label>
-                        <input type="text" class="form-control" [(ngModel)]="persona.Apellidos"
-                            name="apellidos.Apellidos" placeholder="Apellidos" required="">
+                        <input type="text" class="form-control" formControlName="Apellidos"
+                            name="Apellidos" placeholder="Apellidos" >
                     </div>
                     <div class="col-4">
                         <label for="text" class="form-label">Cédula(<font color="red">*</font>)</label>
-                        <input type="number" class="form-control" [(ngModel)]="persona.Identificacion"
-                            name="cedula.Identificacion" placeholder="Cédula" required="">
+                        <input type="number" class="form-control" formControlName="Identificacion"
+                            name="Identificacion" placeholder="Cédula">
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Teléfono(<font color="red">*</font>)</label>
+                        <input type="number" class="form-control" formControlName="Telefono"
+                            name="Telefono" placeholder="Telefono">
                     </div>
                     <div class="col-4">
                         <label class="form-label" for="email">E-mail (<font color="red">*</font>)</label>
-                        <input type="email" class="form-control" [(ngModel)]="persona.Email" name="email.Email"
-                            placeholder="E-mail" required="">
+                        <input type="email" class="form-control" formControlName="Email" name="Email"
+                            placeholder="E-mail" >
                     </div>
                     <div class="col-4">
                         <label for="text" class="form-label">Dirección</label>
-                        <input type="text" class="form-control" [(ngModel)]="persona.Direccion"
-                            name="direccion.Direccion" placeholder="Dirección">
+                        <input type="text" class="form-control" formControlName="Direccion"
+                            name="Direccion" placeholder="Dirección">
                     </div>
                     <div class="col-4">
                         <label for="text" class="form-label">Fecha nacimiento</label>
-                        <input type="date" class="form-control" [(ngModel)]="persona.FechaNacimiento"
-                            name="fecha.FechaNacimiento">
+                        <input type="date" class="form-control" formControlName="FechaNacimiento"
+                            name="FechaNacimiento">
                     </div>
                     <div class="col-4">
                         <label for="text" class="form-label">Profesión (<font color="red">*</font>)</label>
-                        <select class="form-select" [(ngModel)]="persona.nivelEstudios" name="email.nivelEstudios"
+                        <select class="form-select"formControlName="nivelEstudios" name="nivelEstudios"
                             name="profesion" aria-label="Default select example">
                             <option selected>Seleccionar..</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
                         </select>
                     </div>
                     <div class="col-4">
                         <label for="text" class="form-label">Socio</label>
-                        <select class="form-select " [(ngModel)]="persona.Socio" name="socio.Socio"
+                        <select class="form-select "formControlName="Socio" name="Socio"
                             aria-label="Default select example">
                             <option selected>Seleccionar..</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="1">Si</option>
+                            <option value="2">No</option>
+                           
                         </select>
-                    </div>
-                    <div class="col-4">
-                        <label for="text" class="form-label">Password (<font color="red">*</font>)</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password">
-                    </div>
-
+                    </div>                  
                 </div>
                 <div>
-                    <button type="button" class="btn btn-primary" onclick="RegisterPersona()"
-                        style="margin: 5px ;">Agregar</button>
+                    <button type="submit" class="btn btn-primary"
+                        style="margin: 5px ;" [disabled]="personaForm.invalid">Agregar</button>
                     <button type="button" routerLink="/persona" class="btn btn-danger">Cancelar</button>
                 </div>
 

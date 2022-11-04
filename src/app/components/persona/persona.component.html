@@ -20,10 +20,9 @@
           <div class="card">
             <div class="card-body text-center">           
               
-              <table datatable class="table table-striped mt-5 " id="idTablePersona">
+              <table  *ngIf="listadoPersonas.length > 0 " datatable class="table table-striped mt-5 " id="idTablePersona">
                 <thead>
-                  <tr>
-                    <th scope="col">#</th>
+                  <tr>                     
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellidos</th>
                     <th scope="col">Cédula</th>
@@ -36,73 +35,24 @@
                   </tr>
                 </thead>
                 <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Haminton</td>
-                    <td>Mena</td>
-                    <td>80772379</td>
-                    <td>3124943527/s</td>
-                    <td>hamintonjair@gmail.com</td>
-                    <td>cra 12 # 45-135</td>
-                    <td>02/10/2022</td>
-                    <td>no</td>
+                  <tr *ngFor= "let p of listadoPersonas">                               
+                    <td>{{p.Nombres}}</td>
+                    <td>{{p.Apellidos}}</td>
+                    <td>{{p.Identificacion}}</td>
+                    <td>{{p.Telefono}}</td>
+                    <td>{{p.Email}}</td>
+                    <td>{{p.Direccion}}</td>
+                    <td>{{p.FechaNacimiento}}</td>
+                    <td>{{p.Socio}}</td>               
                     <td>
-                      <a class="btn btn-info btn-sm" routerLink=""><i class="fa-solid fa-eye"></i></a>
-                      <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Haminton</td>
-                    <td>Mena</td>
-                    <td>80772379</td>
-                    <td>3124943527/s</td>
-                    <td>hamintonjair@gmail.com</td>
-                    <td>cra 12 # 45-135</td>
-                    <td>02/10/2022</td>
-                    <td>no</td>
-                    <td>
-                      <a class="btn btn-info btn-sm" routerLink=""><i class="fa-solid fa-eye"></i></a>
-                      <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
-                    </td>
-                  </tr>
-                  <tr>
-
-                    <th scope="row">3</th>
-                    <td>Haminton</td>
-                    <td>Mena</td>
-                    <td>80772379</td>
-                    <td>3124943527/s</td>
-                    <td>hamintonjair@gmail.com</td>
-                    <td>cra 12 # 45-135</td>
-                    <td>02/10/2022</td>
-                    <td>no</td>
-                    <td>
-                      <a class="btn btn-info btn-sm" routerLink=""><i class="fa-solid fa-eye"></i></a>
-                      <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Haminton</td>
-                    <td>Mena</td>
-                    <td>80772379</td>
-                    <td>3124943527/s</td>
-                    <td>hamintonjair@gmail.com</td>
-                    <td>cra 12 # 45-135</td>
-                    <td>02/10/2022</td>
-                    <td>no</td>
-                    <td>
-                      <a class="btn btn-info btn-sm" routerLink=""><i class="fa-solid fa-eye"></i></a>
-                      <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
-                    </td>
-                  </tr>
+                    
+                      <a class="btn btn-success btn-sm " title="Editar" [routerLink]="['/editar-persona', p.id]"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <i (click)="eliminarPersona(p.id)" class="btn btn-danger btn-sm" title="Eliminar"><i class="fa-solid fa-trash-can"></i></i>
+                    </td>  
+                  </tr>             
                 </tbody>
               </table>
+              <h5 style="text-align: center; margin-top: 10px;" *ngIf="listadoPersonas.length == 0 ">No hay funcionarios para mostrar</h5>
             </div>
           </div>
 

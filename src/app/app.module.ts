@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DataTablesModule } from 'angular-datatables';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastrModule} from 'ngx-toastr';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LoginComponent } from './components/login/login.component';
@@ -60,7 +62,10 @@ import { AgregarRevisionComponent } from './components/revisiones/agregar-revisi
     NgxPaginationModule,
     DataTablesModule,
     HttpClientModule,
-    FormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -26,6 +26,7 @@ const routes: Routes = [
   { path : 'principal', component: PrincipalComponent },
   { path : 'persona', component:PersonaComponent },
   { path : 'agregar-persona', component: FormularioPersonaComponent },
+  { path : 'editar-persona/:id', component: FormularioPersonaComponent },
   { path : 'persona-estudio', component: EstudiosRolComponent },
   { path : 'persona-modulos', component: ModulosComponent },
   { path : 'agregar-estudio-rol', component: FormularioEstudiosRolComponent },
