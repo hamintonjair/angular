@@ -29,6 +29,8 @@ import { NabvarGeneralComponent } from './components/nabvar-general/nabvar-gener
 import { RepuestosComponent } from './components/repuestos/repuestos.component';
 import { AgregarRepuestosComponent } from './components/repuestos/agregar-repuestos/agregar-repuestos.component';
 import { AgregarRevisionComponent } from './components/revisiones/agregar-revision/agregar-revision.component';
+import { SegurosComponent } from './components/seguros/seguros.component';
+import { AgregarSegurosComponent } from './components/seguros/agregar-seguros/agregar-seguros.component';
 
 
 @NgModule({
@@ -53,6 +55,8 @@ import { AgregarRevisionComponent } from './components/revisiones/agregar-revisi
     RepuestosComponent,
     AgregarRepuestosComponent,
     AgregarRevisionComponent,
+    SegurosComponent,
+    AgregarSegurosComponent,
 
 
   ],
