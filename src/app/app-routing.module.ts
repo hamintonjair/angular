@@ -1,5 +1,6 @@
 
 
+
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PrincipalComponent } from './components/principal/principal.component';
@@ -18,7 +19,10 @@ import { AgregarRepuestosComponent } from './components/repuestos/agregar-repues
 import { RevisionesComponent } from './components/revisiones/revisiones.component';
 import { AgregarRevisionComponent } from './components/revisiones/agregar-revision/agregar-revision.component';
 import { RevisionesFinalizadasComponent } from './components/revisiones-finalizadas/revisiones-finalizadas.component';
+import { SegurosComponent } from './components/seguros/seguros.component';
+import { AgregarSegurosComponent } from './components/seguros/agregar-seguros/agregar-seguros.component';
 import { HeaderComponent } from './components/header/header.component';
+
 const routes: Routes = [
   
   { path : 'login', component: LoginComponent },
@@ -30,6 +34,7 @@ const routes: Routes = [
   { path : 'persona-estudio', component: EstudiosRolComponent },
   { path : 'persona-modulos', component: ModulosComponent },
   { path : 'agregar-estudio-rol', component: FormularioEstudiosRolComponent },
+  { path : 'editar-estudio/:id', component: FormularioEstudiosRolComponent },
   { path : 'agregar-modulo', component: FormularioModulosComponent },
   { path : 'impresion3d', component: Impresion3dComponent},
   { path : 'agregar-impresion3d', component: AgregarImpresion3dComponent},
@@ -38,6 +43,9 @@ const routes: Routes = [
   { path : 'revisiones', component: RevisionesComponent},
   { path : 'agregar-revision', component: AgregarRevisionComponent},
   { path : 'revisiones-finalizadas', component: RevisionesFinalizadasComponent},
+  { path : 'seguros', component: SegurosComponent},
+  { path : 'agregar-seguros', component: AgregarSegurosComponent},
+  { path : 'editar-seguro/:id', component: AgregarSegurosComponent},
   { path : '', component: LoginComponent },
   { path : "**",component: PageNotFoundComponent }
 ];

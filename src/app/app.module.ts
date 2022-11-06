@@ -68,7 +68,6 @@ import { AgregarSegurosComponent } from './components/seguros/agregar-seguros/ag
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
   providers: [],

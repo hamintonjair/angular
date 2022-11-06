@@ -1,1 +1,59 @@
-<p>agregar-seguros works!</p>
+<app-header></app-header>
+<app-nabvar-general></app-nabvar-general>
+
+<div class="container" id="formfuncionario">
+    <div class="row justify-content-center">
+                    
+            <div class="row col-lg-8 border">
+                <form [formGroup]="seguroForm" (ngSubmit)="agregarSeguro()">
+                    <div class="row ">
+                        <h2 style="text-align: center; color:rgb(0, 0, 0)" class="titulo">{{titulo | uppercase}}
+                            <div *ngIf="loading" class="spinner-border float-right" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </h2>                        
+                        <dir></dir>
+                        <label for="text">Los campos con (<font color="red">*</font>) son obligatorios</label>
+                        <dir></dir>
+                        <div class="col-4">
+                            <label for="text" class="form-label">Impresoras(<font color="red">*</font>)</label>
+                            <select class="form-select" formControlName="impresoras" aria-label="Default select example" required="">                                
+                                 <option  selected>Seleccionar..</option>                                
+                                 <option value="ricoh">ricoh</option>   
+                                 
+                              
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <label for="text" class="form-label">Tipo de seguro(<font color="red">*</font>)</label>
+                            <select class="form-select"formControlName="TipoSeguro"  aria-label="Default select example" required="">                                
+                                 <option selected >Seleccionar..</option>
+                                 <option value="Superseguro Electrónica El Corte Inglés">Superseguro Electrónica El Corte Inglés</option>                             
+                         
+                            </select>
+                        </div>                        
+                        <div class="col-4">
+                            <label for="text" class="form-label">Precio(<font color="red">*</font>)</label>
+                            <input type="number" class="form-control" formControlName="Precio" placeholder="Precio del seguro"
+                                required="">
+                        </div>
+                        <div class="col-6">
+                            <label for="text" class="form-label">Fecha de activación(<font color="red">*</font>)</label>
+                            <input type="date" class="form-control" formControlName="fechaActivacion"
+                                placeholder="01-02-2022" required="">
+                        </div>
+                        <div class="col-6">
+                            <label for="text" class="form-label">Fecha de vencimiento(<font color="red">*</font>)</label>
+                            <input type="date" class="form-control" formControlName="fechaVencimiento"
+                                placeholder="01-02-2022" required="">
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary" style="margin: 5px ;"
+                            >Agregar</button>
+                        <button type="button" routerLink="/seguros" class="btn btn-danger">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>

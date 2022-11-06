@@ -1,1 +1,55 @@
-<p>seguros works!</p>
+<!--instanciamos la cabecera-->
+<app-header></app-header>
+<app-nabvar-general></app-nabvar-general>
+
+<dir>
+  <div class="row " style="margin:10px; ">
+    <div class="col-md-4">
+      <h3 style="text-align: right;">Módulo Seguros</h3>
+    </div>
+    <div class="col-md-4">
+      <button type="button" class="btn btn-outline-primary" routerLink="/agregar-seguros"
+        style="text-align: left;">Agregar</button>
+    </div>
+  </div>
+<dir>
+
+    <div class="container mt-5" id="containerPersona">
+      <div class="row">
+        <div class="col-lg-12 offset-lg2">
+          <div class="card">
+            <div class="card-body text-center">           
+              
+              <table  *ngIf="listadoSeguro.length > 0 "  datatable class="table table-striped mt-5 " id="idTablePersona">
+                <thead>
+                  <tr>                     
+                    <th scope="col">Impresora</th>
+                    <th scope="col">Tipo de seguro</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Fecha de activación</th>
+                    <th scope="col">Fecha de vencimiento</th>                   
+                    <th scope="col">Acción</th>
+                  </tr>
+                </thead>
+                <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
+                  <tr *ngFor= "let s of listadoSeguro">                               
+                    <td>{{s.Impresora}}</td>
+                    <td>{{s.TipoSeguro}}</td>
+                    <td>{{s.Precio}}</td>
+                    <td>{{s.FechaActivacion}}</td>
+                    <td>{{s.FechaVencimiento}}</td>                            
+                    <td>
+                        <a class="btn btn-success btn-sm " title="Editar" [routerLink]="['/editar-seguro', s.id]"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <i (click)="eliminarSeguro(s.id)" class="btn btn-danger btn-sm" title="Eliminar"><i class="fa-solid fa-trash-can"></i></i>
+                    </td>  
+                  </tr>             
+                </tbody>
+              </table>
+              <h5 style="text-align: center; margin-top: 10px;" *ngIf="listadoSeguro.length == 0 ">No hay Seguros para mostrar</h5>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>

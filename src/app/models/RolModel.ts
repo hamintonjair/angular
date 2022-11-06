@@ -1,6 +1,7 @@
 export class RolModel{
 
-    Nombre: string
-    Password: string
+    id?: number;
+    Nombre: string  
+    Password: string  
     loginId: string
 }

@@ -37,8 +37,5 @@ export class PersonaComponent implements OnInit {
       console.log(error);
     })
   }
-  //editar persona
-  editarPersona(){
-
-  }
-}
+  
+ }

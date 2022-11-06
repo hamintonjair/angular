@@ -4,6 +4,7 @@ import { PersonaModel } from '../models/PersonaModel';
 import { Observable } from 'rxjs';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,14 +25,9 @@ export class PersonaService {
   //metodo para listar personas
   selectPersona(): Observable<any> {
     return this.http.get(this.url);
-  }
+  } 
 
- // tambien se puede hacer asi
-  // selectPersona() {
-  //   return this.http.get(this.url, { headers: { 'Content-Type': 'application/json' } });
-  // }
-
-  //eliminar oersona
+  //eliminar persona
   eliminarPersona(id: string): Observable<any> {
     return this.http.delete(this.url + id);
   }

@@ -7,12 +7,16 @@
           
             <form [formGroup]="personaForm" (ngSubmit)="agregarPersona()">
                 <div class="row ">
-                    <h2 style="text-align: center; color:rgb(0, 0, 0)" class="titulo">{{titulo | uppercase}}</h2>                 
+                    <h2 style="text-align: center; color:rgb(0, 0, 0)" class="titulo">{{titulo | uppercase}}
+                        <div *ngIf="loading" class="spinner-border float-right" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </h2>                 
                     <dir></dir>
                     <label for="text">Los campos con (<font color="red">*</font>) son obligatorios</label>
                     <dir></dir>
                     <div class="col-4">
-                        <label for="text" class="form-label">Nombre(<font color="red">*</font>)</label>
+                        <label for="text" class="form-label">Nombre (<font color="red">*</font>)</label>
                         <input type="text" class="form-control" formControlName="Nombres" name="Nombres"
                             placeholder="Nombre" >
                     </div>
@@ -32,7 +36,7 @@
                             name="Telefono" placeholder="Telefono">
                     </div>
                     <div class="col-4">
-                        <label class="form-label" for="email">E-mail (<font color="red">*</font>)</label>
+                        <label class="form-label" for="email">E-mail(<font color="red">*</font>)</label>
                         <input type="email" class="form-control" formControlName="Email" name="Email"
                             placeholder="E-mail" >
                     </div>
@@ -47,25 +51,22 @@
                             name="FechaNacimiento">
                     </div>
                     <div class="col-4">
-                        <label for="text" class="form-label">Profesión (<font color="red">*</font>)</label>
-                        <select class="form-select"formControlName="nivelEstudios" name="nivelEstudios"
+                        <label for="text" class="form-label">Profesión(<font color="red">*</font>)</label>
+                        <select class="form-select" formControlName="nivelEstudios" name="nivelEstudios"
                             name="profesion" aria-label="Default select example">
                             <option selected>Seleccionar..</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                            <option *ngFor = "let e of listadoNivelEstudio" >{{e.Nombre}}</option>    
+                            <option value="Ninguno">Ninguno</option>                   
                         </select>
                     </div>
                     <div class="col-4">
-                        <label for="text" class="form-label">Socio</label>
-                        <select class="form-select "formControlName="Socio" name="Socio"
-                            aria-label="Default select example">
+                        <label for="text" class="form-label">Socio(<font color="red">*</font>)</label>
+                        <select class="form-select" formControlName="Socio" aria-label="Default select example">
                             <option selected>Seleccionar..</option>
-                            <option value="1">Si</option>
-                            <option value="2">No</option>
-                           
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
                         </select>
-                    </div>                  
+                    </div>              
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary"

@@ -1,5 +1,5 @@
 export class  NivelEstudioModel{
   
+  id?: number;
   Nombre: string
-  personaId: string
 }
