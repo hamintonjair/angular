@@ -21,6 +21,8 @@ import { AgregarRevisionComponent } from './components/revisiones/agregar-revisi
 import { RevisionesFinalizadasComponent } from './components/revisiones-finalizadas/revisiones-finalizadas.component';
 import { SegurosComponent } from './components/seguros/seguros.component';
 import { AgregarSegurosComponent } from './components/seguros/agregar-seguros/agregar-seguros.component';
+import {ImpresoraComponent} from './components/impresora/impresora.component';
+import { AgregarImpresoraComponent } from './components/impresora/agregar-impresora/agregar-impresora.component'
 import { HeaderComponent } from './components/header/header.component';
 
 const routes: Routes = [
@@ -46,6 +48,8 @@ const routes: Routes = [
   { path : 'seguros', component: SegurosComponent},
   { path : 'agregar-seguros', component: AgregarSegurosComponent},
   { path : 'editar-seguro/:id', component: AgregarSegurosComponent},
+  { path : 'impresora', component: ImpresoraComponent},
+  { path : 'agregar-impresora', component: AgregarImpresoraComponent},
   { path : '', component: LoginComponent },
   { path : "**",component: PageNotFoundComponent }
 ];

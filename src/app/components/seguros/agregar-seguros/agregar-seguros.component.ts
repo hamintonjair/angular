@@ -74,6 +74,11 @@ export class AgregarSegurosComponent implements OnInit {
           });
       })
     } else {
+
+      //  const seguro = await _SeguroService.findOne();
+      // if(seguro){
+      //   return 
+      // }
       this.loading = true;      
         this._SeguroService.guardarSeguro(seguro).subscribe(data => {   
             

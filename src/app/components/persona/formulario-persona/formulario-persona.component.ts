@@ -1,5 +1,4 @@
 import { error } from 'jquery';
-
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PersonaService } from 'src/app/services/persona.service';

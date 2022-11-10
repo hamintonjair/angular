@@ -31,6 +31,8 @@ import { AgregarRepuestosComponent } from './components/repuestos/agregar-repues
 import { AgregarRevisionComponent } from './components/revisiones/agregar-revision/agregar-revision.component';
 import { SegurosComponent } from './components/seguros/seguros.component';
 import { AgregarSegurosComponent } from './components/seguros/agregar-seguros/agregar-seguros.component';
+import { ImpresoraComponent } from './components/impresora/impresora.component';
+import { AgregarImpresoraComponent } from './components/impresora/agregar-impresora/agregar-impresora.component';
 
 
 @NgModule({
@@ -57,6 +59,8 @@ import { AgregarSegurosComponent } from './components/seguros/agregar-seguros/ag
     AgregarRevisionComponent,
     SegurosComponent,
     AgregarSegurosComponent,
+    ImpresoraComponent,
+    AgregarImpresoraComponent,
 
 
   ],

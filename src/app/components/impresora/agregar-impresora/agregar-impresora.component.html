@@ -1,0 +1,88 @@
+<app-header></app-header>
+<app-nabvar-general></app-nabvar-general>
+
+<div class="container" id="formImpresora">
+    <div class="row justify-content-center">
+        <div class="row col-lg-8 border">
+          
+            <form [formGroup]="impresoraForm" (ngSubmit)="agregarImpresora()">
+                <div class="row ">
+                    <h2 style="text-align: center; color:rgb(0, 0, 0)" class="titulo">{{titulo | uppercase}}
+                        <div *ngIf="loading"  class="spinner-border float-right" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </h2>                 
+                    <dir>
+                        
+                    </dir>
+                    <label for="text">Los campos con (<font color="red">*</font>) son obligatorios</label>
+                    <dir></dir>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Nombre impresora(<font color="red">*</font>)</label>
+                        <input type="text" class="form-control" formControlName="Nombre" name="Nombre"
+                            placeholder="Nombres" >
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Marca</label>
+                        <input type="text" class="form-control"
+                        formControlName="Marca"  name="Marca" placeholder="Marca" >
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Tipo de impresora(<font color="red">*</font>)</label>
+                        <select class="form-select"  name="nivelEstudios"
+                        formControlName="TipoImpresora"  name="TipoImpresora" aria-label="Default select example">
+                            <option selected>Seleccionar..</option>
+                            <option value="Fotocopiadoras">Fotocopiadora</option>    
+                            <option value="Multifuncional">Multifuncional</option>    
+                            <option value="Básica">Básica</option>    
+                                             
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Placa(<font color="red">*</font>)</label>
+                        <input type="text" class="form-control"
+                        formControlName="Placa"  name="Placa" placeholder="Placa">
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Fecha ingreo(<font color="red">*</font>)</label>
+                        <input type="date" class="form-control" 
+                        formControlName="FechaIngreso"  name="FechaIngreso">
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Año modelo</label>
+                        <input type="date" class="form-control" 
+                        formControlName="AnoModelo"  name="AnoModelo">
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Velocidad impresión(<font color="red">*</font>)</label>
+                        <input type="text" class="form-control" 
+                        formControlName="Velocidadimpresion"   name="Velocidadimpresion" placeholder="Velocidad de impresión">
+                    </div>
+                    <div class="col-4">
+                        <label class="form-label" for="form-label">Volumen impresión(<font color="red">*</font>)</label>
+                        <input type="number" class="form-control" 
+                        formControlName="VolumenImpresion" name="VolumenImpresion"  placeholder="Volumen de impresión" >
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Pais</label>
+                        <input type="text" class="form-control"
+                        formControlName="Pais"  name="Pais" placeholder="Pais">
+                    </div>  
+
+                    <div class="col-8">
+                        <label for="text" class="form-label">Detalles del ingreso(<font color="red">*</font>)</label>
+                        <textarea type="text" class="form-control"
+                        formControlName="Datalles" name="Datalles" placeholder="Detalles del ingreso"></textarea>
+                    </div>  
+                          
+                       
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary"
+                        style="margin: 5px ;" [disabled]="impresoraForm.invalid" >Agregar</button>
+                    <button type="button" routerLink="/impresora" class="btn btn-danger">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
