@@ -40,8 +40,9 @@ const routes: Routes = [
   { path : 'agregar-modulo', component: FormularioModulosComponent },
   { path : 'impresion3d', component: Impresion3dComponent},
   { path : 'agregar-impresion3d', component: AgregarImpresion3dComponent},
-  { path : 'repuestos', component: RepuestosComponent},
+  { path : 'repuestos', component: RepuestosComponent}, 
   { path : 'agregar-repuestos', component: AgregarRepuestosComponent},
+  { path : 'editar-repuestos/:id', component: AgregarRepuestosComponent},
   { path : 'revisiones', component: RevisionesComponent},
   { path : 'agregar-revision', component: AgregarRevisionComponent},
   { path : 'revisiones-finalizadas', component: RevisionesFinalizadasComponent},
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path : 'editar-seguro/:id', component: AgregarSegurosComponent},
   { path : 'impresora', component: ImpresoraComponent},
   { path : 'agregar-impresora', component: AgregarImpresoraComponent},
+  { path : 'editar-impresora/:id', component: AgregarImpresoraComponent},
   { path : '', component: LoginComponent },
   { path : "**",component: PageNotFoundComponent }
 ];

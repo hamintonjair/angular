@@ -10,6 +10,6 @@ export class ImpresoraModel{
     Velocidadimpresion: string
     VolumenImpresion: number
     FechaIngreso: Date   
-    Datalles: String
+    Detalles: String
 
  }

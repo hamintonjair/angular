@@ -22,16 +22,14 @@
             <div class="card-body text-center">
               <table  *ngIf = "listadoNivelEstudio.length > 0"  datatable class="row-border hover ">
                 <thead>
-                  <tr>
-                    <th scope="col">#</th>
+                  <tr>               
                     <th scope="col">Estudios</th>
                     <th scope="col">Acción</th>
 
                   </tr>
                 </thead>
                 <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
-                  <tr  *ngFor= "let estudio of listadoNivelEstudio">
-                    <th scope="row">1</th>
+                  <tr  *ngFor= "let estudio of listadoNivelEstudio">                
                     <td>{{estudio.Nombre}}</td>
                     <td>
                       <a class="btn btn-success btn-sm " title="Editar" [routerLink]="['/editar-estudio', estudio.id]"><i class="fa-solid fa-pen-to-square"></i></a>
@@ -48,9 +46,9 @@
         <div class="col-lg-6 offset-lg2">
           <div class="card">
             <div class="card-body text-center">
-              <table *ngIf = "listadoRol.length > 0" datatable class="row-border hover " >
+              <table *ngIf = "listadoRol.length > 0" datatable class="row  " id="Idrol" >
                 <thead>
-                  <tr>
+                  <tr>                 
                     <th scope="col">Tecnico</th>
                     <th scope="col">Rol</th>
                     <th scope="col">Password</th>
@@ -60,8 +58,8 @@
                 </thead>
                 <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
                   <tr *ngFor= "let rol of listadoRol">
-                    <td>{{rol.loginId}}</td>       
-                    <td>{{rol.Nombre}}</td>          
+                    <td>{{rol.Nombre}}</td>       
+                    <td>{{rol.Rol}}</td>          
                     <td>{{rol.Password}}</td>               
                     <td>
                       <a class="btn btn-success btn-sm " title="Editar" [routerLink]="['/editar-estudio', rol.id]"><i class="fa-solid fa-pen-to-square"></i></a>

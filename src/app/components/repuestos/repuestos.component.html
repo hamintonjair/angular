@@ -14,16 +14,14 @@
         </div>
     </div>
     <dir>
-
         <div class="container" id="containerRepuesto">
             <div class="row " >
                 <div class="col-md-12 offset-lg2 ">
                     <div class="card">
                         <div class="card-body text-center">
-                            <table datatable class="row-border hover " id="idTableRepuesto">
+                            <table *ngIf="listadoRepuestos.length > 0 " datatable class="row-border hover " id="idTableRepuesto">
                                 <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
+                                    <tr>                                       
                                         <th scope="col">Tipo de Repuesto</th>
                                         <th scope="col">Cantidad</th>
                                         <th scope="col">Precio</th>
@@ -32,70 +30,22 @@
                                     </tr>
                                 </thead>
                                 <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Cabezal</td>
-                                        <td>50</td>
-                                        <td>50000</td>
-                                        <td>na</td>
-                                        <td>
-                                            <a class="btn btn-info btn-sm" routerLink=""><i
-                                                    class="fa-solid fa-eye"></i></a>
-                                            <a class="btn btn-success btn-sm" routerLink=""><i
-                                                    class="fa-solid fa-pen-to-square"></i></a>
-                                            <a class="btn btn-danger btn-sm" routerLink=""><i
-                                                    class="fa-solid fa-trash-can"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Estructura</td>
-                                        <td>34</td>
-                                        <td>25000</td>
-                                        <td>na</td>
-                                        <td>
-                                            <a class="btn btn-info btn-sm" routerLink=""><i
-                                                    class="fa-solid fa-eye"></i></a>
-                                            <a class="btn btn-success btn-sm" routerLink=""><i
-                                                    class="fa-solid fa-pen-to-square"></i></a>
-                                            <a class="btn btn-danger btn-sm" routerLink=""><i
-                                                    class="fa-solid fa-trash-can"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
+                                    <tr *ngFor= "let rep of listadoRepuestos"> 
 
-                                        <th scope="row">3</th>
-                                        <td>Extrusor</td>
-                                        <td>34</td>
-                                        <td>40000</td>
-                                        <td>na</td>
-                                        <td>
-                                            <a class="btn btn-info btn-sm" routerLink=""><i
-                                                    class="fa-solid fa-eye"></i></a>
-                                            <a class="btn btn-success btn-sm" routerLink=""><i
+                                        <td>{{rep.Detalle}}</td>  
+                                        <td>{{rep.Cantidad}}</td> 
+                                        <td>{{rep.Precio}}</td> 
+                                        <td>{{rep.Imagen}}</td>                                      
+                                        <td>                                          
+                                            <a class="btn btn-success btn-sm" [routerLink]="['/editar-repuestos', rep.id]"><i
                                                     class="fa-solid fa-pen-to-square"></i></a>
-                                            <a class="btn btn-danger btn-sm" routerLink=""><i
+                                            <a (click)="eliminarRepuestos(rep.id)" class="btn btn-danger btn-sm" routerLink="/repuestos"><i
                                                     class="fa-solid fa-trash-can"></i></a>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Fuente de alimentación</td>
-                                        <td>23</td>
-                                        <td>100000</td>
-                                        <td>na</td>
-                                        <td>
-                                            <a class="btn btn-info btn-sm" routerLink=""><i
-                                                    class="fa-solid fa-eye"></i></a>
-                                            <a class="btn btn-success btn-sm" routerLink=""><i
-                                                    class="fa-solid fa-pen-to-square"></i></a>
-                                            <a class="btn btn-danger btn-sm" routerLink=""><i
-                                                    class="fa-solid fa-trash-can"></i></a>
-                                        </td>
-                                    </tr>
+                                    </tr>                                   
                                 </tbody>
                             </table>
-
+                            <h5 style="text-align: center; margin-top: 10px;" *ngIf="listadoRepuestos.length == 0 ">No hay repuestos para mostrar</h5>
                         </div>
                     </div>
                 </div>

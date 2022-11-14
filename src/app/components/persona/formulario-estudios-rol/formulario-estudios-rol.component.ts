@@ -38,7 +38,7 @@ export class FormularioEstudiosRolComponent implements OnInit {
     //rol
     this.rolForm = this.fb.group({
 
-      rol: ['', Validators.required],
+      Rol: ['', Validators.required],
       Nombre: ['', Validators.required],   
       Password: ['', Validators.required]    
     })
@@ -62,7 +62,7 @@ export class FormularioEstudiosRolComponent implements OnInit {
   agregarRol() {
 
     const rol: RolModel = {
-      loginId: this.rolForm.get('rol')?.value,
+      Rol: this.rolForm.get('Rol')?.value,
       Nombre: this.rolForm.get('Nombre')?.value,
       Password: this.rolForm.get('Password')?.value,
     
@@ -107,7 +107,7 @@ export class FormularioEstudiosRolComponent implements OnInit {
       this.titulo = 'Editar Rol';
       this.RolService.obtenerIdRol(this.id).subscribe(data => {
         this.rolForm.setValue({
-          rol : data.loginId,
+          loginId : data.loginId,
           Nombre: data.Nombre,  
           Password: data.Password,      
         })

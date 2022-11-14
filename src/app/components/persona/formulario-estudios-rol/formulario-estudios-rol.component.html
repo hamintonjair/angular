@@ -42,7 +42,7 @@
                     <dir></dir>
                     <div class="col-6">
                         <label for="text" class="form-label">Técnico(<font color="red">*</font>)</label>
-                        <select class="form-select " formControlName="rol" aria-label="Default select example">
+                        <select class="form-select " formControlName="Nombre" name="Nombre" aria-label="Default select example">
                             
                              <option  selected>Seleccionar..</option>
                              <option *ngFor ="let p of listadoPersonas">{{p.Nombres}}</option>
@@ -51,8 +51,14 @@
                     </div>
                     <div class="col-6">
                         <label for="text" class="form-label">Rol(<font color="red">*</font>)</label>
-                        <input type="nombre" class="form-control" formControlName="Nombre" placeholder="Nombre"
-                            required="">
+                        <select class="form-select " formControlName="Rol" name="Rol" aria-label="Default select example">                            
+                            <option  selected >Seleccionar..</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Auxiliar">Auxiliar</option>
+                            <option value="Tecnico">Tecnico</option>
+                         
+                       </select>
+                   
                     </div>
                     <div class="col-6">
                         <label for="text" class="form-label">Password(<font color="red">*</font>)</label>

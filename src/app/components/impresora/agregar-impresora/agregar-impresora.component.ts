@@ -38,13 +38,14 @@ export class AgregarImpresoraComponent implements OnInit {
       Velocidadimpresion: ['', Validators.required],
       VolumenImpresion: ['', Validators.required],
       FechaIngreso: ['', Validators.required],
-      Datalles: ['', Validators.required],   
+      Detalles: ['', Validators.required],   
 
     })
     this.id = this.aRouter.snapshot.paramMap.get('id');
   }
 
   ngOnInit(): void {
+    this.editar();
   }
 
   agregarImpresora() {
@@ -59,7 +60,7 @@ export class AgregarImpresoraComponent implements OnInit {
       Velocidadimpresion: this.impresoraForm.get('Velocidadimpresion')?.value,      
       VolumenImpresion: this.impresoraForm.get('VolumenImpresion')?.value,
       FechaIngreso: this.impresoraForm.get('FechaIngreso')?.value,
-      Datalles: this.impresoraForm.get('Datalles')?.value,    
+      Detalles: this.impresoraForm.get('Detalles')?.value,    
     } 
     imp.AnoModelo = new Date( imp.AnoModelo);
     imp.FechaIngreso = new Date( imp.FechaIngreso);
@@ -93,6 +94,33 @@ export class AgregarImpresoraComponent implements OnInit {
         console.log(error);
         this.toastr.error('No se pudieron registrar los datos!', 'Error de registrado');
         this.impresoraForm.reset();
+      })
+    }
+  }
+  //editar
+  editar(){
+    if (this.id !== null) {
+      this.titulo = 'Editar Impresora';
+      this.impresoraService.obtenerIdImpresora(this.id).subscribe(data => {
+
+        console.log(data);
+
+        this.impresoraForm.setValue({
+
+          Nombre:data.Nombre,
+          Marca:data.Marca,
+          Placa:data.Placa,
+          Pais:data.Pais,
+          AnoModelo:data.AnoModelo,
+          TipoImpresora:data.TipoImpresora,
+          Velocidadimpresion:data.Velocidadimpresion,
+          VolumenImpresion:data.VolumenImpresion,
+          FechaIngreso:data.FechaIngreso,
+          Detalles:data.Detalles,   
+    
+        })
+
+       
       })
     }
   }
