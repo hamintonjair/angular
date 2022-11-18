@@ -39,6 +39,7 @@ const routes: Routes = [
   { path : 'editar-estudio/:id', component: FormularioEstudiosRolComponent },
   { path : 'agregar-modulo', component: FormularioModulosComponent },
   { path : 'impresion3d', component: Impresion3dComponent},
+  { path : 'editar-impresion3d/:Id', component: AgregarImpresion3dComponent},
   { path : 'agregar-impresion3d', component: AgregarImpresion3dComponent},
   { path : 'repuestos', component: RepuestosComponent}, 
   { path : 'agregar-repuestos', component: AgregarRepuestosComponent},

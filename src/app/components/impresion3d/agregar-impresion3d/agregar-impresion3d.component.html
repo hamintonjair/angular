@@ -1,51 +1,55 @@
 <app-header></app-header>
 <app-nabvar-general></app-nabvar-general>
 
-<div class="container" id="formImpresion3d">
+<div class="container" id="formrepuestos">
     <div class="row justify-content-center">
         <div class="row col-lg-8 border">
-            <form>
-                <div class="row ">
-                    <h2 style="text-align: center;">Registro de Impresiones 3D</h2>
-                    <dir></dir>
+            <form [formGroup]="impresion3dForm" (ngSubmit)="agregarImpresion3d()">
+                <div class="row ">                                
+                    <h2 style="text-align: center; color:rgb(0, 0, 0)" class="titulo">{{titulo | uppercase}}
+                       <div *ngIf="loading" class="spinner-border float-right" role="status">
+                           <span class="sr-only">Loading...</span>
+                       </div>
+                   </h2>    
+                    <dir></dir> 
                     <label for="text">Los campos con (<font color="red">*</font>) son obligatorios</label>
                     <dir></dir>
                     <div class="col-4">
-                        <label for="text" class="form-label">Nombres y Apellidos(<font color="red">*</font>)</label>
-                        <input type="text" class="form-control" name="nombre.Nombres"
-                            placeholder="Nombres y Apellidos" required="">
+                        <label for="text" class="form-label">Cliente(<font color="red">*</font>)</label>
+                        <input type="text" class="form-control" name="Cliente" formControlName="Cliente"
+                            placeholder="Cliente" >
+                    </div>                     
+                    <div class="col-4">
+                        <label for="text" class="form-label">identificacion(<font color="red">*</font>)</label>
+                        <input type="number" class="form-control" formControlName="Identificacion"
+                            name="Identificacion" placeholder="Identificacion">
                     </div>
                     <div class="col-4">
-                        <label for="text" class="form-label">Cédula(<font color="red">*</font>)</label>
-                        <input type="number" class="form-control"
-                            name="cedula.Identificacion" placeholder="Cédula" required="">
+                        <label for="text" class="form-label">Cantidad(<font color="red">*</font>)</label>
+                        <input type="number" class="form-control"  formControlName="Cantidad"
+                            name="Cantidad" placeholder="Cantidad">
                     </div>
                     <div class="col-4">
                         <label for="text" class="form-label">Tipo de impresión (<font color="red">*</font>)</label>
-                        <select class="form-select"  name="email.nivelEstudios"
-                            name="profesion" aria-label="Default select example">
+                        <select class="form-select"  name="TipoImpre" class="form-control"  formControlName="TipoImpre"
+                            name="TipoImpre" aria-label="Default select example">
                             <option selected>Seleccionar..</option>
                             <option value="3">Normal</option>
                             <option value="1">2D</option>
                             <option value="2">3D</option>
                         
                         </select>
-                    </div>
+                        </div>
                     <div class="col-4">
-                        <label for="text" class="form-label">Cantidad(<font color="red">*</font>)</label>
-                        <input type="number" class="form-control" 
-                            name="direccion.Direccion" placeholder="Cantidad">
-                    </div>
-                    <div class="col-4">
-                        <label for="text" class="form-label">Precio(<font color="red">*</font>)</label>
-                        <input type="number" class="form-control" 
-                            name="cedula.Identificacion" placeholder="Precio" required="">
-                    </div>
+                       <label for="text" class="form-label">Precio(<font color="red">*</font>)</label>
+                       <input type="number" class="form-control"  formControlName="Precio"
+                           name="Precio" placeholder="Precio">
+                   </div>
 
                 </div>
                 <div>
-                    <button type="button" class="btn btn-primary" onclick="RegisterPersona()"
-                        style="margin: 5px ;">Agregar</button>
+                    <button type="submit" class="btn btn-primary" 
+                        style="margin: 5px ;" [disabled]="impresion3dForm.invalid">Agregar</button>
                     <button type="button" routerLink="/impresion3d" class="btn btn-danger">Cancelar</button>
                 </div>
 
