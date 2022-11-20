@@ -36,6 +36,5 @@ export class SegurosComponent implements OnInit {
       console.log(error);
     })
   }
-  
 
 }

@@ -1,3 +1,4 @@
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -10,6 +11,7 @@ import { interval, timer } from 'rxjs';
 import { RolModel } from 'src/app/models/RolModel';
 import { NivelEstudioModel } from 'src/app/models/NivelEstudioModel';
 import { NivelEstudioService } from 'src/app/services/nivel-estudio.service';
+
 
 @Component({
   selector: 'app-formulario-estudios-rol',
@@ -32,7 +34,7 @@ export class FormularioEstudiosRolComponent implements OnInit {
     private RolService: RolService,
     private NivelEstudioService: NivelEstudioService,
     private aRouter: ActivatedRoute,
-    
+
   ){
 
     //rol
@@ -57,7 +59,7 @@ export class FormularioEstudiosRolComponent implements OnInit {
     this.obtenerPersonas();
        
   }
-
+  
   //registrar rol
   agregarRol() {
 
@@ -84,14 +86,16 @@ export class FormularioEstudiosRolComponent implements OnInit {
     } else {
       this.loadingR = true;      
         this.RolService.guardarRol(rol).subscribe(data => {   
-            
+
+         
           const contador = timer(1000);
           contador.subscribe( (n) =>{
           this.loadingR = false;
           this.rolForm.reset();
-          this.toastr.success('El Rol fue registrado con exito!', 'Rol Registrado!');       
+          this.toastr.success('El Rol fue registrado con exito!', 'Rol Registrado!'); 
+              
           });
-        
+     
       }, error => {
         console.log(error);
         this.toastr.error('No se pudieron registrar los datos!', 'Error de registrado');
@@ -106,10 +110,10 @@ export class FormularioEstudiosRolComponent implements OnInit {
 
       this.titulo = 'Editar Rol';
       this.RolService.obtenerIdRol(this.id).subscribe(data => {
-        this.rolForm.setValue({
-          loginId : data.loginId,
+        this.rolForm.setValue({         
           Nombre: data.Nombre,  
-          Password: data.Password,      
+          Password: data.Password,
+          Rol : data.Rol,      
         })
       })
     }

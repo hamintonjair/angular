@@ -31,12 +31,12 @@
                     </div>
                     <div class="col-4">
                         <label for="text" class="form-label">Tipo de impresión (<font color="red">*</font>)</label>
-                        <select class="form-select"  name="TipoImpre" class="form-control"  formControlName="TipoImpre"
+                        <select class="form-select" type="text" class="form-control"  formControlName="TipoImpre"
                             name="TipoImpre" aria-label="Default select example">
                             <option selected>Seleccionar..</option>
-                            <option value="3">Normal</option>
-                            <option value="1">2D</option>
-                            <option value="2">3D</option>
+                            <option value="Normal">Normal</option>
+                            <option value="2D">2D</option>
+                            <option value="3D">3D</option>
                         
                         </select>
                         </div>
@@ -50,7 +50,7 @@
                 <div>
                     <button type="submit" class="btn btn-primary" 
                         style="margin: 5px ;" [disabled]="impresion3dForm.invalid">Agregar</button>
-                    <button type="button" routerLink="/impresion3d" class="btn btn-danger">Cancelar</button>
+                    <button type="button" routerLink="/impresion3d" class="btn btn-info">Atras</button>
                 </div>
 
             </form>

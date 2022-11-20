@@ -29,6 +29,8 @@ export class AgregarImpresoraComponent implements OnInit {
   ){
     this.impresoraForm = this.fb.group({
 
+      Cliente: ['', Validators.required],
+      Correo: ['', Validators.required],
       Nombre: ['', Validators.required],
       Marca: [''],
       Placa: ['', Validators.required],
@@ -51,6 +53,8 @@ export class AgregarImpresoraComponent implements OnInit {
   agregarImpresora() {
 
     const imp: ImpresoraModel = {
+      Cliente: this.impresoraForm.get('Cliente')?.value,   
+      Correo: this.impresoraForm.get('Correo')?.value,   
       Nombre: this.impresoraForm.get('Nombre')?.value,
       Marca: this.impresoraForm.get('Marca')?.value,
       Placa: this.impresoraForm.get('Placa')?.value,
@@ -107,6 +111,8 @@ export class AgregarImpresoraComponent implements OnInit {
 
         this.impresoraForm.setValue({
 
+          Cliente:data.Cliente, 
+          Correo:data.Correo, 
           Nombre:data.Nombre,
           Marca:data.Marca,
           Placa:data.Placa,
@@ -116,8 +122,8 @@ export class AgregarImpresoraComponent implements OnInit {
           Velocidadimpresion:data.Velocidadimpresion,
           VolumenImpresion:data.VolumenImpresion,
           FechaIngreso:data.FechaIngreso,
-          Detalles:data.Detalles,   
-    
+          Detalles:data.Detalles,  
+
         })
 
        

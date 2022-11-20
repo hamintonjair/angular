@@ -4,6 +4,7 @@ import { NivelEstudioModel } from 'src/app/models/NivelEstudioModel';
 import { NivelEstudioService } from 'src/app/services/nivel-estudio.service';
 import { RolService } from 'src/app/services/rol.service';
 import { RolModel } from 'src/app/models/RolModel';
+import { LoginService } from 'src/app/services/login.service';
 import { error } from 'jquery';
 import { ToastrService } from 'ngx-toastr';
 
@@ -20,6 +21,7 @@ export class EstudiosRolComponent implements OnInit {
 
   constructor(private NivelEstudioService: NivelEstudioService,
                        private RolService : RolService,
+                       private Loginservice: LoginService,
                        private toastr: ToastrService) { }
 
   ngOnInit(): void {
@@ -61,6 +63,7 @@ export class EstudiosRolComponent implements OnInit {
   eliminarRol(id: any) {    
     this.RolService.eliminarRol(id).subscribe(data => {
       this.toastr.error('El Rol fue eliminado con exito', 'Rol eliminado');
+      this.Loginservice.eliminarLogin(id).subscribe();
       this.obtenerRol();
     }, error => {
       console.log(error);

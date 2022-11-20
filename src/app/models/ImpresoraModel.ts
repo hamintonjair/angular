@@ -2,6 +2,8 @@ export class ImpresoraModel{
 
     id?: number;
     Nombre:  string
+    Cliente:  string
+    Correo:  string
     Marca: string
     Placa: string
     Pais: string

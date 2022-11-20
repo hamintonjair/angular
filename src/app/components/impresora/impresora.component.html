@@ -21,31 +21,31 @@
               
               <table  *ngIf="listadoImpresora.length > 0 " datatable class="table table-striped mt-5 " id="idTableImpresora">
                 <thead>
-                  <tr>                     
+                  <tr>       
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Correo</th>              
                     <th scope="col">Nombre</th>
                     <th scope="col">Marca</th>
                     <th scope="col">Tipo imp.</th>
-                    <th scope="col">Placa.</th>
-                    <th scope="col">Año Modelo</th>
+                    <th scope="col">Placa.</th>                   
                     <th scope="col">F. ingreso</th>
                     <th scope="col">Velocidad imp</th>
-                    <th scope="col">Volumen Imp </th>
-                    <th scope="col">Pais</th>
+                    <th scope="col">Volumen Imp </th>                    
                     <th scope="col">Detalles</th>
                     <th scope="col">Acción</th>                 
                   </tr>
                 </thead>
                 <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
-                  <tr *ngFor= "let imp of listadoImpresora">                               
+                  <tr *ngFor= "let imp of listadoImpresora">  
+                    <td>{{imp.Cliente}}</td>
+                    <td>{{imp.Correo}}</td>                             
                     <td>{{imp.Nombre}}</td>
                     <td>{{imp.Marca}}</td>
                     <td>{{imp.TipoImpresora}}</td>
-                    <td>{{imp.Placa}}</td>
-                    <td>{{imp.AnoModelo}}</td>
+                    <td>{{imp.Placa}}</td>                   
                     <td>{{imp.FechaIngreso}}</td>
                     <td>{{imp.Velocidadimpresion}}</td>
-                    <td>{{imp.VolumenImpresion}}</td>
-                    <td>{{imp.Pais}}</td>   
+                    <td>{{imp.VolumenImpresion}}</td>                    
                     <td>{{imp.Detalles}}</td>                              
                     <td>
                     

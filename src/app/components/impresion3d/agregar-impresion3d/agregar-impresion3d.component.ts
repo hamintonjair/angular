@@ -24,8 +24,7 @@ export class AgregarImpresion3dComponent implements OnInit {
     private toastr: ToastrService,
     private impresion3dService: Impresion3dService,
     private aRouter: ActivatedRoute,
-    //private NivelEstudioService: NivelEstudioService
-    
+       
   ){
     this.impresion3dForm = this.fb.group({
 
@@ -42,7 +41,7 @@ export class AgregarImpresion3dComponent implements OnInit {
 
   ngOnInit(): void {
     this.editar();
-    //this.obtenerEstudios();
+   
   }
   //registrar funcionario
   agregarImpresion3d() {
@@ -52,11 +51,8 @@ export class AgregarImpresion3dComponent implements OnInit {
       Identificacion: this.impresion3dForm.get('Identificacion')?.value,
       Cantidad: this.impresion3dForm.get('Cantidad')?.value,
       TipoImpre: this.impresion3dForm.get('TipoImpre')?.value,
-      Precio: this.impresion3dForm.get('Precio')?.value,
-      
-    }
-   
-      //p.FechaNacimiento = new Date( p.FechaNacimiento);
+      Precio: this.impresion3dForm.get('Precio')?.value,      
+    }    
    
     console.log(imp);
     //si el id es null quiere decir que s eva a guardas un nuevo dato de lo contrario es actualizar

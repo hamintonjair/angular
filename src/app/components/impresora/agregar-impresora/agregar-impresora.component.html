@@ -18,9 +18,19 @@
                     <label for="text">Los campos con (<font color="red">*</font>) son obligatorios</label>
                     <dir></dir>
                     <div class="col-4">
+                        <label for="text" class="form-label">Nombre cliente(<font color="red">*</font>)</label>
+                        <input type="text" class="form-control" formControlName="Cliente" name="Cliente"
+                            placeholder="Nombres" >
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Correo Electónico(<font color="red">*</font>)</label>
+                        <input type="text" class="form-control" formControlName="Correo" name="Correo"
+                            placeholder="Correo" >
+                    </div>
+                    <div class="col-4">
                         <label for="text" class="form-label">Nombre impresora(<font color="red">*</font>)</label>
                         <input type="text" class="form-control" formControlName="Nombre" name="Nombre"
-                            placeholder="Nombres" >
+                            placeholder="Impresora" >
                     </div>
                     <div class="col-4">
                         <label for="text" class="form-label">Marca</label>
@@ -80,7 +90,7 @@
                 <div>
                     <button type="submit" class="btn btn-primary"
                         style="margin: 5px ;" [disabled]="impresoraForm.invalid" >Agregar</button>
-                    <button type="button" routerLink="/impresora" class="btn btn-danger">Cancelar</button>
+                    <button type="button" routerLink="/impresora" class="btn btn-info">Atras</button>
                 </div>
             </form>
         </div>

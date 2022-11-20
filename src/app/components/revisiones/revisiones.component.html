@@ -20,10 +20,9 @@
           <div class="card">
             <div class="card-body text-center">           
               
-              <table datatable class="table table-striped mt-5 ">
+              <table  *ngIf="listadoRevision.length > 0 "  datatable class="table table-striped mt-5 ">
                 <thead>
-                  <tr>
-                    <th scope="col">#</th>
+                  <tr>                  
                     <th>Tecnico</th>
                     <th>T. revisión</th>
                     <th>Impresora</th>  
@@ -37,72 +36,24 @@
                   </tr>
                 </thead>
                 <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Sebastian</td>   
-                    <td>interno</td>              
-                    <td>ricoh</td>
-                    <td>toner</td>
-                    <td>150000</td>
-                    <td>no</td> 
-                    <td>15/06/2022</td>
-                    <td>cambio de toner y mantenimiento</td>                 
-                    <td class="text-info ">En proceso</td>
+                  <tr *ngFor= "let r of listadoRevision">                   
+                    <td>{{r.Tecnico}}</td>   
+                    <td>{{r.TipoRevision}}</td>              
+                    <td>{{r.Impresora}}</td>
+                    <td>{{r.Repuesto}}</td>
+                    <td>{{r.Valor}}</td>
+                    <td>{{r.Actualizacion}}</td> 
+                    <td>{{r.FechaRevision}}</td>
+                    <td>{{r.Datalles}}</td>                 
+                    <td class="text-info ">{{r.Estado}}</td>
                     <td>                     
-                      <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
+                      <a class="btn btn-success btn-sm " title="Editar" [routerLink]="['/editar-revision', r.id]"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <i (click)="eliminarRevision(r.id)" class="btn btn-danger btn-sm" title="Eliminar"><i class="fa-solid fa-trash-can"></i></i>
                     </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Hector</td>   
-                    <td>externo</td>              
-                    <td>ricoh</td>
-                    <td>toner</td>
-                    <td>150000</td>
-                    <td>si</td> 
-                    <td>15/06/2022</td>
-                    <td>cambio de toner y mantenimiento</td>                 
-                    <td class="text-success ">Terminado</td>
-                    <td>                     
-                      <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Alex</td>   
-                    <td>interno</td>              
-                    <td>ricoh</td>
-                    <td>toner</td>
-                    <td>150000</td>
-                    <td>no</td> 
-                    <td>15/06/2022</td>
-                    <td>cambio de toner y mantenimiento</td>                 
-                    <td class="text-info ">En proceso</td>
-                    <td>                     
-                      <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Haminton</td>   
-                    <td>externo</td>              
-                    <td>ricoh</td>
-                    <td>toner</td>
-                    <td>150000</td>
-                    <td>si</td> 
-                    <td>15/06/2022</td>
-                    <td>cambio de toner y mantenimiento</td>                 
-                    <td class="text-success ">Terminado</td>
-                    <td>                     
-                      <a class="btn btn-success btn-sm" routerLink=""><i class="fa-solid fa-pen-to-square"></i></a>
-                      <a class="btn btn-danger btn-sm" routerLink=""><i class="fa-solid fa-trash-can"></i></a>
-                    </td>
-                  </tr>
-                </tbody>
+                  </tr>                 
+                </tbody>                
               </table>
+              <h5 style="text-align: center; margin-top: 10px;" *ngIf="listadoRevision.length == 0 ">No hay Revisiones para mostrar</h5>
             </div>
           </div>
 

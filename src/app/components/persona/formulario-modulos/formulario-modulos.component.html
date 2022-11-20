@@ -5,78 +5,98 @@
 <div class="container" id="formModulos">
     <div class="row justify-content-center">
         <div class="row col-lg-8 border">
-        
-                <form>
-                    <div class="row ">
-                        <h2 style="text-align: center;">Asignación de módulos</h2>
-                        <dir></dir>
-                        <label for="text">Los campos con (<font color="red">*</font>) son obligatorios</label>
-                        <dir></dir>
-                        <div class="col-4">
-                            <label for="text" class="form-label">Persona(<font color="red">*</font>)</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Seleccionar..</option>
-                                <option value="1">Si</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="col-4">
-                            <label for="text" class="form-label">Seguros(<font color="red">*</font>)</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Seleccionar..</option>
-                                <option value="1">Si</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="col-4">
-                            <label for="text" class="form-label">Impresoras(<font color="red">*</font>)</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Seleccionar..</option>
-                                <option value="1">Si</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="col-4">
-                            <label for="text" class="form-label">Impresión 3D</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Seleccionar..</option>
-                                <option value="1">Si</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="col-4">
-                            <label class="form-label" for="email">Repuestos(<font color="red">*</font>)</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Seleccionar..</option>
-                                <option value="1">Si</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="col-4">
-                            <label for="text" class="form-label">Revisión</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Seleccionar..</option>
-                                <option value="1">Si</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
-                        <div class="col-4">
-                            <label for="text" class="form-label">Finalizadas (<font color="red">*</font>)</label>
-                            <select class="form-select " aria-label="Default select example">
-                                <option selected>Seleccionar..</option>
-                                <option value="1">Si</option>
-                                <option value="2">No</option>
-                            </select>
-                        </div>
 
+            <form [formGroup]="permisosForm" (ngSubmit)="agregarPermisos()">
+                <div class="row ">
+                    <h2 style="text-align: center; color:rgb(0, 0, 0)" class="titulo">{{titulo | uppercase}}
+                        <div *ngIf="loading" class="spinner-border float-right" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </h2>
+                    <dir></dir>
+                    <label for="text">Los campos con (<font color="red">*</font>) son obligatorios</label>
+                    <dir></dir>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Funcionario(<font color="red">*</font>)</label>
+                        <select class="form-select" formControlName="Rol" name="Rol"
+                            aria-label="Default select example">
+                            <option selected>Seleccionar..</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Auxiliar">Auxiliar</option>
+                            <option value="Tecnico">Tecnico</option>
+                        </select>
                     </div>
-                </form>
-                <div>
-                    <button type="submit" class="btn btn-primary" style="margin: 5px ;">Agregar</button>
-                    <button type="button" routerLink="/persona-modulos" class="btn btn-danger">Cancelar</button>
-                </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Persona(<font color="red">*</font>)</label>
+                        <select formControlName="Persona" name="Persona" class="form-select"
+                            aria-label="Default select example">
+                            <option selected>Seleccionar..</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Seguros(<font color="red">*</font>)</label>
+                        <select formControlName="Seguros" name="Seguros" class="form-select"
+                            aria-label="Default select example">
+                            <option selected>Seleccionar..</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Impresoras(<font color="red">*</font>)</label>
+                        <select formControlName="Impresora" name="Impresora" class="form-select"
+                            aria-label="Default select example">
+                            <option selected>Seleccionar..</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Impresión 3D(<font color="red">*</font>)</label>
+                        <select formControlName="Impresion3D" name="Impresion3D" class="form-select"
+                            aria-label="Default select example">
+                            <option selected>Seleccionar..</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label class="form-label" for="email">Repuestos(<font color="red">*</font>)</label>
+                        <select formControlName="Repuestos" name="Repuestos" class="form-select"
+                            aria-label="Default select example">
+                            <option selected>Seleccionar..</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Revisión(<font color="red">*</font>)</label>
+                        <select formControlName="Revisiones" name="Revisiones" class="form-select"
+                            aria-label="Default select example">
+                            <option selected>Seleccionar..</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="text" class="form-label">Finalizadas (<font color="red">*</font>)</label>
+                        <select formControlName="RevisionFinalizadas" name="RevisionFinalizadas" class="form-select "
+                            aria-label="Default select example">
+                            <option selected>Seleccionar..</option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
 
-            </div>
-    
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary" style="margin: 5px ;"
+                        [disabled]="permisosForm.invalid">Agregar</button>
+                    <button type="button" routerLink="/persona-modulos" class="btn btn-info">Atras</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

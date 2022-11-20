@@ -23,7 +23,6 @@ export class ImpresoraService {
   selectImpresora(): Observable<any> {
     return this.http.get(this.url);
   }
-
   //eliminar oersona
   eliminarImpresora(id: string): Observable<any> {
     return this.http.delete(this.url + id);

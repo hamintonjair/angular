@@ -16,70 +16,40 @@
           <div class="card">
             <div class="card-body text-center">           
               
-              <table datatable class="table table-striped mt-5 " id="idTablePersona">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Tecnico</th>
-                    <th scope="col">Impresora</th>
-                    <th scope="col">T. revisión</th>
-                    <th scope="col">Detalles</th>
-                    <th scope="col">E-mail</th>
-                    <th scope="col">Precio</th>                  
-                    <th scope="col">Estado</th>            >
+              <table  *ngIf="listadoRevision.length > 0 "  datatable class="table table-striped mt-5 ">
+                <thead >
+                  <tr>                
+                    <th>Tecnico</th>
+                    <th>T. revisión</th>
+                    <th>Impresora</th>  
+                    <th>Repuesto</th>                     
+                    <th>Precio</th>
+                    <th>Update</th>
+                    <th>Fecha</th>
+                    <th>Detalles</th>
+                    <th>Estado</th>
+                    <th scope="col">Acción</th>
                   </tr>
-                </thead>
-                <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Haminton mena</td>
-                    <td>richo</td>
-                    <td>interno</td>
-                    <td>Cambio de toner y mantenimiento/s</td>
-                    <td>hamintonjair@gmail.com</td>
-                    <td>18500</td>                                 
-                   <td>                    
-                      <a class="btn btn-success btn-sm" routerLink="">Finalizado</a>
+                </thead  >
+                <tbody  *ngFor= "let r of listadoRevision" class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
+
+                  <tr *ngIf="r.Estado != 'En Proceso'">                                
+                    <td>{{r.Tecnico}}</td>   
+                    <td>{{r.TipoRevision}}</td>              
+                    <td>{{r.Impresora}}</td>
+                    <td>{{r.Repuesto}}</td>
+                    <td>{{r.Valor}}</td>
+                    <td>{{r.Actualizacion}}</td> 
+                    <td>{{r.FechaRevision}}</td>
+                    <td>{{r.Datalles}}</td>                 
+                    <td class="text-info ">{{r.Estado}}</td>
+                    <td>                              
+                        <i (click)="eliminarRevision(r.id)" class="btn btn-danger btn-sm" title="Eliminar"><i class="fa-solid fa-trash-can"></i></i>
                     </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Haminton mena</td>
-                    <td>richo</td>
-                    <td>interno</td>
-                    <td>Cambio de toner y mantenimiento/s</td>
-                    <td>hamintonjair@gmail.com</td>
-                    <td>18500</td>                                 
-                   <td>                    
-                      <a class="btn btn-success btn-sm" routerLink="">Finalizado</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Haminton mena</td>
-                    <td>richo</td>
-                    <td>interno</td>
-                    <td>Cambio de toner y mantenimiento/s</td>
-                    <td>hamintonjair@gmail.com</td>
-                    <td>18500</td>                                 
-                   <td>                    
-                      <a class="btn btn-success btn-sm" routerLink="">Finalizado</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Haminton mena</td>
-                    <td>richo</td>
-                    <td>interno</td>
-                    <td>Cambio de toner y mantenimiento/s</td>
-                    <td>hamintonjair@gmail.com</td>
-                    <td>18500</td>                                 
-                   <td>                    
-                      <a class="btn btn-success btn-sm" routerLink="">Finalizado</a>
-                    </td>
-                  </tr>
-                </tbody>
+                  </tr>                 
+                </tbody>                
               </table>
+              <h5 style="text-align: center; margin-top: 10px;" *ngIf="listadoRevision.length == 0 ">No hay Revisiones para mostrar</h5>
             </div>
           </div>
 

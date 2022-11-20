@@ -7,6 +7,8 @@ import { ToastrService } from 'ngx-toastr';
 import { interval, timer } from 'rxjs';
 import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
 import { SeguroService } from 'src/app/services/seguro.service';
+import { ImpresoraService } from 'src/app/services/impresora.service';
+import { ImpresoraModel } from 'src/app/models/ImpresoraModel';
 
 
 @Component({
@@ -17,6 +19,8 @@ import { SeguroService } from 'src/app/services/seguro.service';
 export class AgregarSegurosComponent implements OnInit {
 
   listadoSeguro = new Array<SeguroModel>();
+  listadoImpresora = new Array<ImpresoraModel>();
+
   seguroForm: FormGroup;
   titulo = 'Crear Seguro';
   id: string | null;
@@ -24,7 +28,8 @@ export class AgregarSegurosComponent implements OnInit {
 
 
   constructor(private _SeguroService: SeguroService, private fb: FormBuilder,
-    private toastr: ToastrService,  
+    private toastr: ToastrService, 
+    private _impresora: ImpresoraService, 
    
     private aRouter: ActivatedRoute,
     
@@ -42,6 +47,7 @@ export class AgregarSegurosComponent implements OnInit {
 
   ngOnInit(): void {
     this.editar(); 
+    this.obtenerImpresoras();
        
   }
   //registrar seguro
@@ -113,14 +119,14 @@ export class AgregarSegurosComponent implements OnInit {
       })
     }
   }
-       //listar
-  //  obtenerImpresoras() {
-  //       this._SeguroService.selectSeguro().subscribe(data => {
-  //         this.listadoSeguro = data;
+     //  listar
+   obtenerImpresoras() {
+        this._impresora.selectImpresora().subscribe(data => {
+          this.listadoImpresora = data;
     
-  //       }, error => {
-  //         console.log(error);
-  //       })
-  //     }
+        }, error => {
+          console.log(error);
+        })
+      }
 
 }

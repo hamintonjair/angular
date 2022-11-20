@@ -61,8 +61,6 @@ import { AgregarImpresoraComponent } from './components/impresora/agregar-impres
     AgregarSegurosComponent,
     ImpresoraComponent,
     AgregarImpresoraComponent,
-
-
   ],
   imports: [
     BrowserModule,
