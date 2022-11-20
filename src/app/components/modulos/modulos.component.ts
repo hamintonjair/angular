@@ -28,7 +28,7 @@ export class ModulosComponent implements OnInit {
     })
   }
   //eliminar
-  eliminarPersona(id: any) {    
+  eliminarpermisos(id: any) {    
     this._permisosService.eliminarPermisos(id).subscribe(data => {
       this.toastr.error('El permiso fue eliminado con exito', 'Permiso eliminado');
       this.obtenerPermisos();

@@ -20,7 +20,6 @@ export class FormularioModulosComponent implements OnInit {
 
   listadoPermisos = new Array<PermisosModel>();
 
-
   permisosForm: FormGroup;
   titulo = 'Crear Permisos';
   id: string | null;
@@ -109,17 +108,16 @@ export class FormularioModulosComponent implements OnInit {
         this.permisosForm.setValue({
 
           Rol: data.Rol,
-          Nombres: data.Nombres,
-          Apellidos: data.Apellidos,
-          Identificacion: data.Identificacion,
-          Telefono: data.Telefono,
-          Email: data.Email,
-          Direccion: data.Direccion,
-          FechaNacimiento: data.FechaNacimiento,
-          nivelEstudios: data.NivelEstudios,   
-          Socio: data.Socio,
+          Persona: data.Persona,
+          Seguros: data.Seguros,
+          Impresora: data.Impresora,
+          Impresion3D: data.Impresion3D,
+          Repuestos: data.Repuestos,
+          Revisiones: data.Revisiones,
+          RevisionFinalizadas: data.RevisionFinalizadas,
+        
         })
       })
     }
   } 
-}
+} 
