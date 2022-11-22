@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PermisosService } from 'src/app/services/permisos.service';
 import { PersonaModel } from 'src/app/models/PersonaModel';
 import { PersonaService } from 'src/app/services/persona.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-modulos',
@@ -30,7 +31,8 @@ export class FormularioModulosComponent implements OnInit {
     private permisosService: PermisosService,
     private _personaService: PersonaService,
     private aRouter: ActivatedRoute,
-    
+    private router: Router
+ 
   ){
     this.permisosForm = this.fb.group({
       
@@ -46,6 +48,8 @@ export class FormularioModulosComponent implements OnInit {
     })
     this.id = this.aRouter.snapshot.paramMap.get('id');
   }
+
+
 
   ngOnInit(): void {
     this.editar();
@@ -77,6 +81,11 @@ export class FormularioModulosComponent implements OnInit {
           this.loading = false;
           this.permisosForm.reset();
           this.toastr.info('El Permisos se actualizó con exito!', 'Permisos Actualizado!');
+
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/persona-permisos']);
+        }); 
         });
        
       })
@@ -88,6 +97,11 @@ export class FormularioModulosComponent implements OnInit {
           this.loading = false;
           this.permisosForm.reset();
           this.toastr.success('Permisos asignados con exito!', 'Permisos Registrado!');
+
+             const contador = timer(500);
+              contador.subscribe( (n) =>{
+              this.router.navigate(['/persona-permisos']);
+            }); 
         });      
         
       }, error => {
@@ -96,6 +110,7 @@ export class FormularioModulosComponent implements OnInit {
         this.permisosForm.reset();
       })
     }
+ 
   }
 //editar
   editar() {

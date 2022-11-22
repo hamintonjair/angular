@@ -11,6 +11,7 @@ import { interval, timer } from 'rxjs';
 import { RolModel } from 'src/app/models/RolModel';
 import { NivelEstudioModel } from 'src/app/models/NivelEstudioModel';
 import { NivelEstudioService } from 'src/app/services/nivel-estudio.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -34,6 +35,7 @@ export class FormularioEstudiosRolComponent implements OnInit {
     private RolService: RolService,
     private NivelEstudioService: NivelEstudioService,
     private aRouter: ActivatedRoute,
+    private router: Router
 
   ){
 
@@ -81,6 +83,11 @@ export class FormularioEstudiosRolComponent implements OnInit {
           this.loadingR = false;
           this.rolForm.reset();
           this.toastr.info('El Rol fue actualizado con exito!', 'Rol Actualizado!');
+
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/persona-estudio']);
+        }); 
           });
       })
     } else {
@@ -93,6 +100,11 @@ export class FormularioEstudiosRolComponent implements OnInit {
           this.loadingR = false;
           this.rolForm.reset();
           this.toastr.success('El Rol fue registrado con exito!', 'Rol Registrado!'); 
+
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/persona-estudio']);
+        }); 
               
           });
      
@@ -137,7 +149,12 @@ export class FormularioEstudiosRolComponent implements OnInit {
              contador.subscribe( (n) =>{
              this.loadingE = false;
              this.estudioForm.reset();
-             this.toastr.info('Nivel de estudio actualizado con exito!', 'Nivel de Actualizado!');             
+             this.toastr.info('Nivel de estudio actualizado con exito!', 'Nivel de Actualizado!');   
+             
+             const contador = timer(500);
+             contador.subscribe( (n) =>{
+             this.router.navigate(['/persona-estudio']);
+           }); 
              });
         })
       } else {
@@ -149,6 +166,11 @@ export class FormularioEstudiosRolComponent implements OnInit {
              this.loadingE = false;
              this.estudioForm.reset();
              this.toastr.success('Nivel de estudio fue registrado con exito!', 'Nivel de estudio Registrado!');
+
+             const contador = timer(500);
+             contador.subscribe( (n) =>{
+             this.router.navigate(['/persona-estudio']);
+           }); 
             });
               
         }, error => {

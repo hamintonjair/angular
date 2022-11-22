@@ -10,6 +10,7 @@ import { RevisionesModel } from 'src/app/models/RevisionesModel';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { interval, timer } from 'rxjs';
 import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { error } from 'jquery';
 import { ToastrService } from 'ngx-toastr';
@@ -40,7 +41,8 @@ export class AgregarRevisionComponent implements OnInit {
     private impresoraService: ImpresoraService,
     private toastr: ToastrService,
     private fb: FormBuilder,
-    private aRouter: ActivatedRoute
+    private aRouter: ActivatedRoute,
+    private router: Router
 
   ){
       this.revisionForm = this.fb.group({
@@ -99,6 +101,11 @@ export class AgregarRevisionComponent implements OnInit {
           this.loading = false;
           this.revisionForm.reset();
           this.toastr.info('La revisión fue actualizado con exito!', 'Revisión Actualizado!');
+
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/revisiones']);
+        }); 
           });
       })
     } else {
@@ -109,7 +116,12 @@ export class AgregarRevisionComponent implements OnInit {
           contador.subscribe( (n) =>{
           this.loading = false;
           this.revisionForm.reset();
-          this.toastr.success('La revisión fue registrado con exito!', 'Revisión Registrado!');       
+          this.toastr.success('La revisión fue registrado con exito!', 'Revisión Registrado!');   
+      
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/revisiones']);
+        }); 
           });
         
       }, error => {

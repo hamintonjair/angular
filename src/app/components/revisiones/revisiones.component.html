@@ -22,7 +22,8 @@
               
               <table  *ngIf="listadoRevision.length > 0 "  datatable class="table table-striped mt-5 ">
                 <thead>
-                  <tr>                  
+                  <tr>  
+                    <th>#</th>                
                     <th>Tecnico</th>
                     <th>T. revisión</th>
                     <th>Impresora</th>  
@@ -36,7 +37,8 @@
                   </tr>
                 </thead>
                 <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
-                  <tr *ngFor= "let r of listadoRevision">                   
+                  <tr *ngFor= "let r of listadoRevision; index as i">  
+                    <td scope="row">{{i+1}}</td>                   
                     <td>{{r.Tecnico}}</td>   
                     <td>{{r.TipoRevision}}</td>              
                     <td>{{r.Impresora}}</td>

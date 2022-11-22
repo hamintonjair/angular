@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';//permite mostrar los msjs al usuario
 import { Impresion3dService } from 'src/app/services/impresion3d.service';
 import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
 import { interval, timer } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agregar-impresion3d',
@@ -24,6 +25,7 @@ export class AgregarImpresion3dComponent implements OnInit {
     private toastr: ToastrService,
     private impresion3dService: Impresion3dService,
     private aRouter: ActivatedRoute,
+    private router: Router
        
   ){
     this.impresion3dForm = this.fb.group({
@@ -65,6 +67,11 @@ export class AgregarImpresion3dComponent implements OnInit {
           this.loading = false;
           this.impresion3dForm.reset();
           this.toastr.info('El Registro de impresión fue actualizado con exito!', 'Fegistro de impresión Actualizado!');
+
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/impresion3d']);
+           })
         });
        
       })
@@ -76,6 +83,11 @@ export class AgregarImpresion3dComponent implements OnInit {
           this.loading = false;
           this.impresion3dForm.reset();
           this.toastr.success('La impresión fue registrada con exito!', 'Impresión Registrada!');
+
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/impresion3d']);
+           })
         });      
         
       }, error => {

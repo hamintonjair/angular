@@ -9,6 +9,7 @@ import { interval, timer } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { PersonaModel } from 'src/app/models/PersonaModel';
 import { formatDate } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -28,7 +29,8 @@ export class FormularioPersonaComponent implements OnInit {
     private toastr: ToastrService,
     private personaService: PersonaService,
     private aRouter: ActivatedRoute,
-    private NivelEstudioService: NivelEstudioService
+    private NivelEstudioService: NivelEstudioService,
+    private router: Router
     
   ){
     this.personaForm = this.fb.group({
@@ -79,6 +81,11 @@ export class FormularioPersonaComponent implements OnInit {
           this.loading = false;
           this.personaForm.reset();
           this.toastr.info('El funcionario fue actualizado con exito!', 'Funcionario Actualizado!');
+
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/persona']);
+        }); 
         });
        
       })
@@ -90,6 +97,11 @@ export class FormularioPersonaComponent implements OnInit {
           this.loading = false;
           this.personaForm.reset();
           this.toastr.success('El funcionario fue registrado con exito!', 'Funcionario Registrado!');
+
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/persona']);
+        }); 
         });      
         
       }, error => {

@@ -40,23 +40,24 @@
           </div>
           <div class="col-lg-6">
             <div class="card-body py-5 px-md-5">                   
-              <form  [formGroup]="loginForm" (ngSubmit)="Login()">
-                <h2 class="text-center"><label >LOGIN </label></h2>       
+              <form >
+                <h2 class="text-center"><label >LOGIN </label></h2>  
+                <!-- <input type="text" id="id" {{p.id}}>   -->           
                 <!-- Email input -->
                 <div class="form-outline mb-4">               
                   <label class="form-label" for="form2Example1">Rol</label>
                   <select class="form-select " formControlName="Rol" name="Rol" aria-label="Default select example">                            
-                    <option selected="selected">Seleccionar..</option>
+                    <option selected="selected">Seleccionar..</option>                  
                     <option value="Admin">Admin</option>
                     <option value="Auxiliar">Auxiliar</option>
-                    <option value="Tecnico">Tecnico</option>
-                 
-               </select>
+                    <option value="Tecnico">Tecnico</option>                 
+               
+               </select>                
                 </div>
                 <!-- Password input -->
                 <div class="form-outline mb-4">
                    <label class="form-label" for="form2Example2">Password</label>
-                  <input type="password" formControlName="Password"  name="Password" class="form-control" />
+                  <input type="password" formControlName="Password" name="Password" class="form-control" />
                  
                 </div>
 
@@ -71,8 +72,7 @@
                   </div>                  
                 </div>
                 <div  class="row mb-">
-                  <button type="submit" class="btn btn-primary" style="margin: 5px ;"
-                      [disabled]="loginForm.invalid">Iniciar sesión</button>                
+                  <button type="button" class="btn btn-primary" style="margin: 5px ;"   routerLink="/principal">Iniciar sesión</button>                
                  </div>
                 <!-- Submit button -->  
                    

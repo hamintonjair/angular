@@ -7,6 +7,7 @@ import { formatDate } from '@angular/common';
 import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
 import { interval, timer } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agregar-impresora',
@@ -25,6 +26,7 @@ export class AgregarImpresoraComponent implements OnInit {
     private toastr: ToastrService,
     private impresoraService: ImpresoraService,
     private aRouter: ActivatedRoute,
+    private router: Router
     
   ){
     this.impresoraForm = this.fb.group({
@@ -81,6 +83,11 @@ export class AgregarImpresoraComponent implements OnInit {
         this.loading = false;
         this.impresoraForm.reset();
         this.toastr.info('La impresora fue actualizado con exito!', 'Impresora Actualizado!');
+
+        const contador = timer(500);
+        contador.subscribe( (n) =>{
+        this.router.navigate(['/impresora']);
+         })
       });
      
     })
@@ -92,6 +99,11 @@ export class AgregarImpresoraComponent implements OnInit {
           this.loading = false;
           this.impresoraForm.reset();
           this.toastr.success('La impresora fue registrado con exito!', 'Impresora Registrada!');
+
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/impresora']);
+           })
         });      
         
       }, error => {

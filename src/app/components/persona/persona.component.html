@@ -22,7 +22,8 @@
               
               <table  *ngIf="listadoPersonas.length > 0 " datatable class="table table-striped mt-5 " id="idTablePersona">
                 <thead>
-                  <tr>                     
+                  <tr>   
+                    <th scope="col">#</th>                  
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellidos</th>
                     <th scope="col">Cédula</th>
@@ -36,7 +37,8 @@
                   </tr>
                 </thead>
                 <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
-                  <tr *ngFor= "let p of listadoPersonas">                               
+                  <tr *ngFor= "let p of listadoPersonas; index as i">  
+                    <td scope="row">{{i+1}}</td>                             
                     <td>{{p.Nombres}}</td>
                     <td>{{p.Apellidos}}</td>
                     <td>{{p.Identificacion}}</td>

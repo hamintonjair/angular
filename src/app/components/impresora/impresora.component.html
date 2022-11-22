@@ -36,7 +36,8 @@
                   </tr>
                 </thead>
                 <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
-                  <tr *ngFor= "let imp of listadoImpresora">  
+                  <tr *ngFor= "let imp of listadoImpresora; index as i">  
+                    <td scope="row">{{i+1}}</td>  
                     <td>{{imp.Cliente}}</td>
                     <td>{{imp.Correo}}</td>                             
                     <td>{{imp.Nombre}}</td>

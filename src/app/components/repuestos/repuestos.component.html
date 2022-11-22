@@ -21,7 +21,8 @@
                         <div class="card-body text-center">
                             <table *ngIf="listadoRepuestos.length > 0 " datatable class="row-border hover " id="idTableRepuesto">
                                 <thead>
-                                    <tr>                                       
+                                    <tr>     
+                                        <th scope="col">#</th>                                  
                                         <th scope="col">Tipo de Repuesto</th>
                                         <th scope="col">Cantidad</th>
                                         <th scope="col">Precio</th>
@@ -30,8 +31,8 @@
                                     </tr>
                                 </thead>
                                 <tbody class="table-group-divider  | paginate: { itemsPerPage: 3, currentPage: page}">
-                                    <tr *ngFor= "let rep of listadoRepuestos"> 
-
+                                    <tr *ngFor= "let rep of listadoRepuestos; index as i"> 
+                                        <td scope="row">{{i+1}}</td>  
                                         <td>{{rep.Detalle}}</td>  
                                         <td>{{rep.Cantidad}}</td> 
                                         <td>{{rep.Precio}}</td> 

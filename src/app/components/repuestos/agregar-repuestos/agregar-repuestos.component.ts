@@ -7,6 +7,7 @@ import { RepuestosService } from 'src/app/services/repuestos.service';
 import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
 import { error } from 'jquery';
 import { formatDate } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-agregar-repuestos',
   templateUrl: './agregar-repuestos.component.html',
@@ -24,6 +25,7 @@ export class AgregarRepuestosComponent implements OnInit {
     private toastr: ToastrService,
     private repuestosService: RepuestosService,
     private aRouter: ActivatedRoute,
+    private router: Router
     
   ){
     this.RepuestosForm = this.fb.group({
@@ -61,6 +63,11 @@ export class AgregarRepuestosComponent implements OnInit {
           this.loading = false;
           this.RepuestosForm.reset();
           this.toastr.info('El repuesto fue actualizado con exito!', 'Repuesto Actualizado!');
+
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/repuestos']);
+        }); 
         });
        
       })
@@ -72,6 +79,11 @@ export class AgregarRepuestosComponent implements OnInit {
           this.loading = false;
           this.RepuestosForm.reset();
           this.toastr.success('El repuesto fue registrado con exito!', 'Repuesto Registrado!');
+
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/repuestos']);
+        }); 
         });      
         
       }, error => {

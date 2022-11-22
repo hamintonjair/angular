@@ -2,7 +2,7 @@ import { LoginModel } from '../models/LoginModel';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,8 @@ export class LoginService {
   private readonly url: string = "http://localhost:3000/rols/";
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
        ) { }
 
    //metodo para listar Permisoss

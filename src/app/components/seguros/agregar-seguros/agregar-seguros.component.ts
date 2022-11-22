@@ -9,6 +9,7 @@ import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
 import { SeguroService } from 'src/app/services/seguro.service';
 import { ImpresoraService } from 'src/app/services/impresora.service';
 import { ImpresoraModel } from 'src/app/models/ImpresoraModel';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -29,9 +30,9 @@ export class AgregarSegurosComponent implements OnInit {
 
   constructor(private _SeguroService: SeguroService, private fb: FormBuilder,
     private toastr: ToastrService, 
-    private _impresora: ImpresoraService, 
-   
+    private _impresora: ImpresoraService,    
     private aRouter: ActivatedRoute,
+    private router: Router
     
   ){
     this.seguroForm = this.fb.group({
@@ -77,6 +78,12 @@ export class AgregarSegurosComponent implements OnInit {
           this.loading = false;
           this.seguroForm.reset();
           this.toastr.info('El Seguro fue actualizado con exito!', 'Seguro Actualizado!');
+
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/seguros']);
+           }); 
+          
           });
       })
     } else {
@@ -92,8 +99,13 @@ export class AgregarSegurosComponent implements OnInit {
           contador.subscribe( (n) =>{
           this.loading = false;
           this.seguroForm.reset();
-          this.toastr.success('El Seguro fue registrado con exito!', 'Seguro Registrado!');       
-          });
+          this.toastr.success('El Seguro fue registrado con exito!', 'Seguro Registrado!');  
+          
+          const contador = timer(500);
+          contador.subscribe( (n) =>{
+          this.router.navigate(['/seguros']);
+        }); 
+         });
         
       }, error => {
         console.log(error);

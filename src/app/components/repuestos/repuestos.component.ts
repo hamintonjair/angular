@@ -5,6 +5,7 @@ import { error } from 'jquery';
 import { ToastrService } from 'ngx-toastr';
 
 
+
 @Component({
   selector: 'app-repuestos',
   templateUrl: './repuestos.component.html',
@@ -15,7 +16,10 @@ export class RepuestosComponent implements OnInit {
 
   listadoRepuestos = new Array<RepuestosModel>();
 
-  constructor(private repuestosService: RepuestosService, private toastr: ToastrService ) { }
+  constructor(private repuestosService: RepuestosService, 
+    private toastr: ToastrService,
+  
+     ) { }
 
   ngOnInit(): void {
     this.obtenerRepuestos();
